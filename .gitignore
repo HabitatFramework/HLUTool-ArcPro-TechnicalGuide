@@ -1,0 +1,14 @@
+.tox/
+build/
+dist/
+_build
+docs/_build
+*.orig
+*.egg-info
+*.pyc
+*.sublime-workspace
+MANIFEST
+.noseids
+.*.swp
+
+old/
