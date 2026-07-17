@@ -4,11 +4,10 @@ Configuration
 
 The HLU Tool ArcGIS Pro add-in separates its settings into two levels:
 
-* **Application-level settings** — shared across all users of the same ArcGIS Pro installation (e.g. database connection type, validation rules, bulk update defaults). Stored as XML in the add-in's :file:`.esriAddInX` folder within the ArcGIS Pro installation.
-* **User-level settings** — specific to each Windows user (e.g. preferred interface options, default reason/process). Stored in the user's Windows roaming profile at :file:`%APPDATA%\\HLU\\HluGisTool`.
+* **Application-level settings** — shared across all users of the same ArcGIS Pro installation (e.g. database connection type, validation rules, bulk update defaults). Application options are stored in a **HLUTool.xml** file in the same folder as the tool add-in **.esriAddinX** file loaded in ArcGIS Pro.
+* **User-level settings** — specific to each Windows user (e.g. preferred interface options, default reason/process). User options are stored in a **user.config** file in the user's roaming folder, e.g. **%AppData%\Esri\ArcGISPro_StrongName_[hash]\[version]** where ``[version]`` relates to the version of ArcGIS Pro installed (such as ``3.4.0.0``).
 
 Because the HLU Tool is an embedded ArcGIS Pro add-in there is no separate GIS connection to configure — the active ArcGIS Pro map and the layer selected in the **Active Layer** drop-down on the ribbon serve as the GIS context.
-
 
 .. index::
 	single: Configuration; Database Connection
@@ -34,7 +33,6 @@ When the HLU Tool dockpane is opened for the first time (or after resetting the 
 	Connection Type dialog
 
 Select the appropriate connection type from the drop-down list and click :guilabel:`OK`.
-
 
 .. raw:: latex
 
@@ -68,7 +66,6 @@ To connect the HLU Tool to a Microsoft SQL Server database:
 
 	6. The **Default schema** defaults to ``dbo``. Change this if required, then click :guilabel:`OK`.
 
-
 .. raw:: latex
 
 	\newpage
@@ -96,7 +93,6 @@ To connect the HLU Tool to an Oracle database:
 
 	3. Click :guilabel:`OK` to establish the connection.
 
-
 .. raw:: latex
 
 	\newpage
@@ -113,7 +109,6 @@ To reset the connection:
 	3. Click :guilabel:`Reset Database Connection …`.
 	4. Confirm the prompt. The saved connection details will be cleared.
 	5. Close and re-open the HLU Tool dockpane. The Connection Type dialog will appear again.
-
 
 .. raw:: latex
 
@@ -155,7 +150,6 @@ New users of the HLU Tool must be added to the 'lut_user' table if they wish to 
 
 	Format of the lut_user table
 
-
 .. note::
 
 	* Users will be able to use the tool even if their user details have not been entered into the lut_user table. However, **[READ ONLY]** will appear in the dockpane header and they will not be able to apply any changes.
@@ -164,7 +158,6 @@ New users of the HLU Tool must be added to the 'lut_user' table if they wish to 
 
 .. caution::
 	Bulk update permission should only be assigned to **expert** users and should only be used with caution as mistakes can have major affects on the data.
-
 
 .. raw:: latex
 
@@ -187,10 +180,8 @@ Additional sources can be added to the 'lut_sources' table. The format of the ta
 
 	Format of the lut_sources table
 
-
 .. note::
 	Existing source records cannot be removed from the 'lut_sources' table if they are referenced by any of the data records (i.e. if they have been used in any incid data records). This is because data integrity must be retained.
-
 
 .. raw:: latex
 
@@ -213,7 +204,6 @@ New processes can be added to the 'lut_process' table. The format of the table i
 
 	Format of the lut_process table
 
-
 .. raw:: latex
 
 	\newpage
@@ -235,12 +225,10 @@ Habitat Classes can be flagged as **local** or not in the 'lut_habitat_class` ta
 
 	Format of the lut_habitat_class table
 
-
 Setting the **local** flag of a Habitat Class to 'False' (zero) in the 'lut_habitat_class' table will stop it appearing in the 'Habitat Class' drop-down list in the Habitats tab of the dockpane and in the 'Habitat Class' drop-down list in the Sources tab.
 
 .. note::
 	Only Habitat Classes that are indirectly referenced by records in the 'lut_habitat_type_ihs_habitat' translation table will appear in the 'Habitat Class' drop-down list in the Habitats tab, even if the **is_local** flag is set to 'True'.
-
 
 .. raw:: latex
 
@@ -263,12 +251,10 @@ Habitat Types can be flagged as **local** in the 'lut_habitat_type` table. The f
 
 	Format of the lut_habitat_type table
 
-
 Setting the **local** flag of a Habitat Type to 'False' (zero) will stop it appearing in the 'Habitat Type' drop-down list in the Habitats tab and in the Sources tab.
 
 .. note::
 	Only Habitat Types that are directly referenced by records in the 'lut_habitat_type_ihs_habitat' translation table will appear in the 'Habitat Type' drop-down list in the Habitats tab, even if the **is_local** flag is set to 'True'.
-
 
 .. raw:: latex
 
@@ -291,10 +277,8 @@ IHS Habitats can be flagged as **local** in the 'lut_ihs_habitat` table. The for
 
 	Format of the lut_ihs_habitat table
 
-
 .. note::
 	Only IHS Habitats flagged as **local** will appear in the 'IHS Habitat' drop-down list in the dockpane. This enables habitats that are not found in the local area to be hidden to avoid being selected in error (e.g. coastal habitats in land-locked counties.)
-
 
 .. raw:: latex
 
@@ -317,10 +301,8 @@ Legacy habitats can be configured in the 'lut_legacy_habitat` table. The format 
 
 	Format of the lut_legacy_habitat table
 
-
 .. note::
 	Existing legacy habitat records cannot be removed from the 'lut_legacy_habitat' table if they are referenced by any of the data records. This is because data integrity must be retained.
-
 
 .. raw:: latex
 
@@ -343,10 +325,8 @@ The OS MasterMap to IHS cross-reference can be configured in the 'lut_osmm_ihs_x
 
 	Format of the lut_osmm_ihs_xref table
 
-
 .. note::
 	Existing OS MasterMap to IHS cross-reference records cannot be removed from the 'lut_osmm_ihs_xref' table as they will be referenced by one or more records in the **incid_osmm_updates** table. This is because data integrity must be retained.
-
 
 .. raw:: latex
 
@@ -375,9 +355,7 @@ Export formats can be added or removed in the 'exports' table shown in the figur
 
 	Format of the exports table
 
-
 Once a new export format has been added to the 'exports' table the fields to be included in the export must be added to the 'exports_fields' table.
-
 
 .. index::
 	single: Exports; Export Fields
@@ -394,14 +372,11 @@ The 'exports_fields' table shown in the figure :ref:`figDTEF` defines which fiel
 
 	Format of the exports_fields table
 
-
 .. note::
 	GIS controlled fields such as shape, perimeter, area, etc. should not be included. These fields will be automatically added to the exported layer.
 
-
 .. seealso::
 	See :ref:`export_tables` for more information.
-
 
 .. index::
 	single: Exports; Field Formats
@@ -475,7 +450,6 @@ The format of the 'source_date_start' and 'source_date_end' fields in the 'incid
 	* Because of the way Source dates are stored in the database, dates entered as a single date (e.g. '01/07/2008' or '2008') rather than a date range (e.g. '01/07/2008 - 30/11/2009' or '- 2008') will always have a 'source_date_end' of 'Unknown' or blank (depending on the chosen output format).
 	* Vague dates (e.g. 'Jul 2008' or '2008') are stored based on the first day of the relevant period, so if output in a more precise format (e.g. entered as '2008' but output as 'mmm yyyy') the day and/or month output will be the first day/month of the relevant period.
 
-
 **Date field specifiers**
 The following table describes the valid date and time format specifiers.
 
@@ -535,3 +509,90 @@ The following table describes the valid date and time format specifiers.
 		| space     | Date or time spacing character.                |
 		+-----------+------------------------------------------------+
 
+.. raw:: latex
+
+	\newpage
+
+.. index::
+	single: Configuration; Bulk Load Options
+
+.. _configuring_bulk_load_options:
+
+Configuring Bulk Load Options
+==============================
+
+The Bulk Load Options allow administrators to configure default settings for the Bulk Load operation, which registers new GIS features against new INCIDs using OSMM attributes matched against the OSMM cross-reference table.
+
+These options are stored as **application-level settings** (in the add-in's XML configuration file) and are shared across all users of the same ArcGIS Pro installation.
+
+.. note::
+	Changes to bulk load options require restarting the HLU Tool dockpane to take effect.
+
+To configure bulk load options:
+
+	1. On the HLU Tool ribbon click **Options** to open the Options window.
+	2. Navigate to **Application > Bulk Load** in the left-hand navigation list.
+	3. Configure the following settings:
+
+		**Default Staging Layer Directory**
+			The default directory path where staging layers will be created during bulk load operations. This directory is used when the user has not previously selected a staging layer location. If left blank, the project home folder will be used as the default.
+
+		**Default Staging Layer Name**
+			The default name for staging layers created during bulk load operations. The default value is ``HLU_Staging``. This name will be suggested when the user creates a new staging layer.
+
+	4. Click :guilabel:`Save` to apply the changes.
+
+.. raw:: latex
+
+	\newpage
+
+.. index::
+	single: Configuration; Reassign Options
+
+.. _configuring_reassign_options:
+
+Configuring Reassign Options
+=============================
+
+The Reassign Options allow administrators to configure rules that determine which GIS features should be moved between HLU layers based on their primary and secondary habitat codes.
+
+These options are stored as **application-level settings** (in the add-in's XML configuration file) and are shared across all users of the same ArcGIS Pro installation.
+
+.. note::
+	Changes to reassign options require restarting the HLU Tool dockpane to take effect.
+
+To configure reassign options:
+
+	1. On the HLU Tool ribbon click **Options** to open the Options window.
+	2. Navigate to **Application > Reassign** in the left-hand navigation list.
+	3. Configure reassign rules using SQL WHERE clause syntax.
+
+Reassign Rule Format
+--------------------
+
+Each reassign rule consists of:
+
+	**Target Layer Name**
+		The exact name of the destination HLU layer (as it appears in the Table of Contents).
+
+	**SQL WHERE Clause**
+		An SQL expression that determines which features should be moved to this target layer. The expression typically references the ``habprimary`` and/or ``habsecond`` fields.
+
+		**Example rules:**
+
+		.. code-block:: sql
+
+			-- Move all features with primary habitat 'WD' to 'HLU_Woodland'
+			habprimary = 'WD'
+
+			-- Move features with primary 'GR' and secondary starting with 'BS' to 'HLU_Grassland'
+			habprimary = 'GR' AND habsecond LIKE 'BS%'
+
+			-- Move features with any of several primary codes to 'HLU_Wetland'
+			habprimary IN ('FE', 'SW', 'BO')
+
+.. caution::
+	* Reassign rules are processed in the order they are defined. The first matching rule determines the target layer.
+	* Features that do not match any rule remain in their current layer.
+	* Target layers must exist in the active map before running the reassign operation.
+	* Ensure WHERE clause syntax is valid for the backend database (SQL Server, PostgreSQL, or Oracle).
