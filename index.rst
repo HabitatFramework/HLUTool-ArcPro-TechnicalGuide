@@ -45,4 +45,3 @@ Contents
    =====
 
    * :ref:`genindex`
-

@@ -904,10 +904,8 @@ This table contains details of all the legacy habitats that can be referenced as
 	sort_order
 		Determines the order legacy habitats are displayed in the 'Legacy Habitat' drop-down list in the main window.
 
-
 .. seealso::
 	See :ref:`configuring_legacy_habitats` for more information.
-
 
 .. index::
 	single: Lookup Tables; lut_process
@@ -928,7 +926,6 @@ This table contains details of all the processes that can be referenced as the a
 	sort_order
 		Determines the order processes are displayed in the 'Process' drop-down list in the ribbon.
 
-
 .. index::
 	single: Lookup Tables; lut_reason
 
@@ -947,7 +944,6 @@ This table contains details of all the reasons that can be referenced as the und
 
 	sort_order
 		Determines the order processes are displayed in the 'Reason' drop-down list in the ribbon.
-
 
 .. index::
 	single: Lookup Tables; lut_osmm_ihs_xref
@@ -989,7 +985,6 @@ This table contains a cross-reference between all the OS MasterMap feature types
 	comments
 		Any user comments relating to the cross-referencing.
 
-
 .. index::
 	single: Lookup Tables; lut_habitat_class
 
@@ -1017,7 +1012,6 @@ This table contains details of all the habitat classification systems (e.g. UKHa
 
 .. seealso::
 	See :ref:`configuring_luts` for more information on configuring lookup tables.
-
 
 .. index::
 	single: Lookup Tables; lut_habitat_type
@@ -1053,7 +1047,6 @@ This table contains details of all the habitat types within each habitat classif
 .. seealso::
 	See :ref:`configuring_luts` for more information on configuring lookup tables.
 
-
 .. index::
 	single: Lookup Tables; lut_primary
 
@@ -1088,7 +1081,6 @@ This table contains all the UKHab primary habitat codes that can be assigned to 
 .. seealso::
 	See :ref:`configuring_luts` for more information on configuring lookup tables.
 
-
 .. index::
 	single: Lookup Tables; lut_primary_category
 
@@ -1110,7 +1102,6 @@ This table groups primary habitat codes into categories. The `is_local` flag on 
 
 	sort_order
 		Determines the order categories are displayed in any relevant drop-down lists.
-
 
 .. index::
 	single: Lookup Tables; lut_habitat_type_primary
@@ -1140,7 +1131,6 @@ This junction table maps habitat types to their valid primary habitat codes. It 
 	sort_order
 		Determines the order records are evaluated when multiple wildcard matches exist.
 
-
 .. index::
 	single: Lookup Tables; lut_secondary_group
 
@@ -1162,7 +1152,6 @@ This table groups secondary habitat codes into named categories, which appear in
 
 	sort_order
 		Determines the order secondary groups are displayed in the 'Group' drop-down list on the Habitats tab.
-
 
 .. index::
 	single: Lookup Tables; lut_secondary
@@ -1189,7 +1178,6 @@ This table contains all the UKHab secondary habitat codes that can be assigned t
 	sort_order
 		Determines the order secondary codes are displayed in the 'Code' drop-down list. Codes with a sort_order value below 100 are treated as 'essential' codes and are accessible via the **<All Essentials>** group option in the 'Group' drop-down list.
 
-
 .. index::
 	single: Lookup Tables; lut_habitat_type_secondary
 
@@ -1211,7 +1199,6 @@ This junction table maps habitat types to their permitted secondary habitat code
 
 	.. note::
 		Whether missing mandatory secondary codes are treated as warnings or errors is controlled by the **Habitat/Secondary Validation** option. See :ref:`options_validation` in the HLU Tool User Guide for details.
-
 
 .. index::
 	single: Lookup Tables; lut_primary_secondary
@@ -1332,7 +1319,6 @@ The following lookup tables can be updated to tailor their **is_local** and/or *
 .. seealso:
 	See :Ref:`configuring_luts` for more information on configuring lookup tables.
 
-
 .. raw:: latex
 
 	\newpage
@@ -1440,7 +1426,6 @@ This table defines which fields are to be exported for each export format in the
 	field_format
 		Allows users to determine the format of the exported field. See :ref:`export_field_formats` for more details on which export fields can be formatted and how to format them.
 
-
 .. raw:: latex
 
 	\newpage
@@ -1458,7 +1443,6 @@ There are 53 tables in the HLU Tool relational database comprised of data tables
 .. tip::
 	Bespoke relationship diagrams between the various HLU Tool tables can be created using SQL Server Management Studio.
 
-
 .. raw:: latex
 
 	\newpage
@@ -1473,7 +1457,6 @@ Data Tables
 	:scale: 85
 
 	Database Relationships - Data Tables
-
 
 .. raw:: latex
 
@@ -1490,7 +1473,6 @@ IHS Lookup Tables
 
 	Database Relationships - IHS Lookup Tables
 
-
 .. raw:: latex
 
 	\newpage
@@ -1505,7 +1487,6 @@ Priority Habitat Tables
 	:scale: 70
 
 	Database Relationships - Priority Habitat Tables
-
 
 .. raw:: latex
 
@@ -1522,7 +1503,6 @@ Habitat Tables
 
 	Database Relationships - Habitat Tables
 
-
 .. raw:: latex
 
 	\newpage
@@ -1537,7 +1517,6 @@ Habitat Type Tables
 	:scale: 85
 
 	Database Relationships - Habitat Type Tables
-
 
 .. raw:: latex
 
@@ -1577,7 +1556,6 @@ The following diagram summarises the key relationships between the habitat class
 	incid_secondary.secondary_habitat ??????? lut_secondary
 	incid_secondary.secondary_group ????????? lut_secondary_group
 
-
 .. raw:: latex
 
 	\newpage
@@ -1592,7 +1570,6 @@ Sources Tables
 	:scale: 90
 
 	Database Relationships - Sources Tables
-
 
 .. raw:: latex
 
@@ -1609,7 +1586,6 @@ History Tables
 
 	Database Relationships - History Tables
 
-
 .. raw:: latex
 
 	\newpage
@@ -1624,7 +1600,6 @@ OS MasterMap Update Tables
 	:scale: 85
 
 	Database Relationships - OS MasterMap Update Tables
-
 
 .. raw:: latex
 
