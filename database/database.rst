@@ -1089,7 +1089,7 @@ This table contains all the UKHab primary habitat codes that can be assigned to 
 lut_primary_category
 --------------------
 
-This table groups primary habitat codes into categories. The `is_local` flag on this table acts as a second-level filter — only primary codes whose category is marked as local will appear in drop-down lists, regardless of the `is_local` flag on 'lut_primary' itself.
+This table groups primary habitat codes into categories. The `is_local` flag on this table acts as a second-level filter â€” only primary codes whose category is marked as local will appear in drop-down lists, regardless of the `is_local` flag on 'lut_primary' itself.
 
 	code
 		A unique identifier for each category. Referenced by `category` in 'lut_primary'.
