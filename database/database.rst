@@ -138,67 +138,69 @@ This is the main data table with one record per INCID. All the other data tables
     :header-rows: 1
     :stub-columns: 1
 
-	* - column
-	  - data type
-	  - description
-	* - incid
-	  - Char(12)
-	  - A unique **Inc**\ remental **id**\ entifier for each logical group of features.
-	* - legacy_habitat
-	  - Char(50)
-	  - Foreign key to `code` in the 'lut_legacy_habitat' table representing the legacy Habitat for the INCID.
-	* - ihs_habitat
-	  - Char(8)
-	  - Foreign key to `code` in the 'lut_ihs_habitat' table representing the pre-conversion IHS Habitat for the INCID.
-	* - ihs_summary
-	  - Char(254)
-	  - A read-only field containing a concatenated list of the IHS habitat details (habitat, matrix, formation, management, complex codes) for the INCID. This field is automatically maintained by the tool and should not be edited directly.
-	* - site_ref
-	  - Char(16)
-	  - A free-text field containing a reference for the location of the feature.
-	* - site_name
-	  - Char(100)
-	  - A free-text field containing a name for the location of the feature.
-	* - boundary_base_map
-	  - Char(2)
-	  - Foreign key to `Code` column in the 'lut_boundary_map' table representing the data map used to identify the feature boundary.
-	* - digitisation_base_map
-	  - Char(2)
-	  - Foreign key to `Code` column in the 'lut_boundary_map' table representing the data map used to digitise the feature boundary.
-	* - general_comments
-	  - Char(254)
-	  - A free-text field containing any general comments relating to the INCID.
-	* - habitat_class
-	  - Char(5)
-	  - Foreign key to `code` in the 'lut_habitat_class' table storing the habitat classification of the primary habitat used when the primary habitat was last updated.
-	* - habitat_version
-	  - Char(11)
-	  - The version of the primary habitat classification system used when the INCID attributes were last updated.
-	* - habitat_primary
-	  - Char(8)
-	  - Foreign key to `code` in the 'lut_primary' table representing the main UKHab primary habitat code for the INCID.
-	* - habitat_secondaries
-	  - Char(80) - A concatenated list of the secondary habitat codes for the INCID.
-	* - quality_determination
-	  - Char(2) - Foreign key to `code` in the 'lut_quality_determination' table representing the accuracy with which the primary and secondary habitats of the INCID have been determined.
-	* - quality_interpretation
-	  - Char(2)
-	  - Foreign key to `code` in the 'lut_quality_interpretation' table representing how well the primary and secondary habitats of the INCID were interpreted from the source data.
-	* - created_date
-	  - DateTime
-	  - The date and time that the INCID was first created (during the initial framework conversion, when the INCID was registered, or following a logical split).
-	* - created_user_id
-	  - Char(40)
-	  - Foreign key to `user_id` in the 'lut_user' table representing the user that created the INCID.
-	* - last_modified_date
-	  - DateTime
-	  - The date and time that the INCID was last modified.
-	* - last_modified_user_id
-	  - Char(40)
-	  - Foreign key to `user_id` in the 'lut_user' table representing the user that last modified the INCID attributes or split or merged the INCID.
+    * - column
+      - data type
+      - description
+    * - incid
+      - Char(12)
+      - A unique **Inc**\ remental **id**\ entifier for each logical group of features.
+    * - legacy_habitat
+      - Char(50)
+      - Foreign key to ``code`` in the ``lut_legacy_habitat`` table representing the legacy Habitat for the INCID.
+    * - ihs_habitat
+      - Char(8)
+      - Foreign key to ``code`` in the ``lut_ihs_habitat`` table representing the pre-conversion IHS Habitat for the INCID.
+    * - ihs_summary
+      - Char(254)
+      - A read-only field containing a concatenated list of the IHS habitat details (habitat, matrix, formation, management, complex codes) for the INCID. This field is automatically maintained by the tool and should not be edited directly.
+    * - site_ref
+      - Char(16)
+      - A free-text field containing a reference for the location of the feature.
+    * - site_name
+      - Char(100)
+      - A free-text field containing a name for the location of the feature.
+    * - boundary_base_map
+      - Char(2)
+      - Foreign key to ``Code`` column in the ``lut_boundary_map`` table representing the data map used to identify the feature boundary.
+    * - digitisation_base_map
+      - Char(2)
+      - Foreign key to ``Code`` column in the ``lut_boundary_map`` table representing the data map used to digitise the feature boundary.
+    * - general_comments
+      - Char(254)
+      - A free-text field containing any general comments relating to the INCID.
+    * - habitat_class
+      - Char(5)
+      - Foreign key to ``code`` in the ``lut_habitat_class`` table storing the habitat classification of the primary habitat used when the primary habitat was last updated.
+    * - habitat_version
+      - Char(11)
+      - The version of the primary habitat classification system used when the INCID attributes were last updated.
+    * - habitat_primary
+      - Char(8)
+      - Foreign key to ``code`` in the ``lut_primary`` table representing the main UKHab primary habitat code for the INCID.
+    * - habitat_secondaries
+      - Char(80)
+      - A concatenated list of the secondary habitat codes for the INCID.
+    * - quality_determination
+      - Char(2)
+      - Foreign key to ``code`` in the ``lut_quality_determination`` table representing the accuracy with which the primary and secondary habitats of the INCID have been determined.
+    * - quality_interpretation
+      - Char(2)
+      - Foreign key to ``code`` in the ``lut_quality_interpretation`` table representing how well the primary and secondary habitats of the INCID were interpreted from the source data.
+    * - created_date
+      - DateTime
+      - The date and time that the INCID was first created (during the initial framework conversion, when the INCID was registered, or following a logical split).
+    * - created_user_id
+      - Char(40)
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that created the INCID.
+    * - last_modified_date
+      - DateTime
+      - The date and time that the INCID was last modified.
+    * - last_modified_user_id
+      - Char(40)
+      - Foreign key to `user_id` in the 'lut_user' table representing the user that last modified the INCID attributes or split or merged the INCID.
 
-	.. note::
-		The ihs_habitat and ihs_summary fields are no longer maintained by the tool, but is retained in the database for legacy purposes. However, they may be cleared during updates or bulk updates depending upon the application options.
+.. note::
+	The ihs_habitat and ihs_summary fields are no longer maintained by the tool, but is retained in the database for legacy purposes. However, they may be cleared during updates or bulk updates depending upon the application options.
 
 .. index::
 	single: Data Tables; incid_ihs_matrix
@@ -213,18 +215,18 @@ This table contains any IHS Matrix codes recorded alongside an IHS Habitat code 
     :header-rows: 1
     :stub-columns: 1
 
-	* - column
-	  - data type
-	  - description
-	* - matrix_id
-	  - Integer
-	  - A unique ID for each record.
-	* - incid
-	  - Char(12)
-	  - Foreign key to `incid` in the 'incid' table.
-	* - matrix
-	  - Char(8)
-	  - Foreign key to `code` in the 'lut_ihs_matrix' table representing an IHS Matrix type.
+    * - column
+      - data type
+      - description
+    * - matrix_id
+      - Integer
+      - A unique ID for each record.
+    * - incid
+      - Char(12)
+      - Foreign key to ``incid`` in the ``incid`` table.
+    * - matrix
+      - Char(8)
+      - Foreign key to ``code`` in the ``lut_ihs_matrix`` table representing an IHS Matrix type.
 
 .. note::
 	These codes are no longer maintained by the tool, but are retained in the database for legacy purposes. However, they may be cleared during updates or bulk updates depending upon the application options.
@@ -242,18 +244,18 @@ This table contains any IHS Formation codes recorded alongside an IHS Habitat co
     :header-rows: 1
     :stub-columns: 1
 
-	* - column
-	  - data type
-	  - description
-	* - formation_id
-	  - Integer
-	  - A unique ID for each record.
-	* - incid
-	  - Char(12)
-	  - Foreign key to `incid` in the 'incid' table.
-	* - formation
-	  - Char(8)
-	  - Foreign key to `code` in the 'lut_ihs_formation' table representing an IHS Formation type.
+    * - column
+      - data type
+      - description
+    * - formation_id
+      - Integer
+      - A unique ID for each record.
+    * - incid
+      - Char(12)
+      - Foreign key to `incid` in the 'incid' table.
+    * - formation
+      - Char(8)
+      - Foreign key to `code` in the 'lut_ihs_formation' table representing an IHS Formation type.
 
 .. note::
 	These codes are no longer maintained by the tool, but are retained in the database for legacy purposes. However, they may be cleared during updates or bulk updates depending upon the application options.
@@ -271,18 +273,18 @@ This table contains any IHS Management codes recorded alongside an IHS Habitat c
     :header-rows: 1
     :stub-columns: 1
 
-	* - column
-	  - data type
-	  - description
-	* - management_id
-	  - Integer - A unique ID for each record.
-	  - A unique ID for each record.
-	* - incid
-	  - Char(12)
-	  - Foreign key to `incid` in the 'incid' table.
-	* - management
-	  - Char(8)
-	  - Foreign key to `code` in the 'lut_ihs_management' table representing an IHS Management type.
+    * - column
+      - data type
+      - description
+    * - management_id
+      - Integer - A unique ID for each record.
+      - A unique ID for each record.
+    * - incid
+      - Char(12)
+      - Foreign key to `incid` in the 'incid' table.
+    * - management
+      - Char(8)
+      - Foreign key to `code` in the 'lut_ihs_management' table representing an IHS Management type.
 
 .. note::
 	These codes are no longer maintained by the tool, but are retained in the database for legacy purposes. However, they may be cleared during updates or bulk updates depending upon the application options.
@@ -300,18 +302,18 @@ This table contains any IHS Complex codes recorded alongside an IHS Habitat code
     :header-rows: 1
     :stub-columns: 1
 
-	* - column
-	  - data type
-	  - description
-	* - complex_id
-	  - Integer
-	  - A unique ID for each record.
-	* - incid
-	  - Char(12)
-	  - Foreign key to `incid` in the 'incid' table.
-	* - complex
-	  - Char(8)
-	  - Foreign key to `code` in the 'lut_ihs_complex' table representing an IHS Complex type.
+    * - column
+      - data type
+      - description
+    * - complex_id
+      - Integer
+      - A unique ID for each record.
+    * - incid
+      - Char(12)
+      - Foreign key to `incid` in the 'incid' table.
+    * - complex
+      - Char(8)
+      - Foreign key to `code` in the 'lut_ihs_complex' table representing an IHS Complex type.
 
 .. note::
 	These codes are no longer maintained by the tool, but are retained in the database for legacy purposes. However, they may be cleared during updates or bulk updates depending upon the application options.
@@ -329,27 +331,27 @@ This table contains details of the priority habitats and potential priority habi
     :header-rows: 1
     :stub-columns: 1
 
-	* - column
-	  - data type
-	  - description
-	* - bap_id
-	  - Integer
-	  - A unique ID for each record.
-	* - incid
-	  - Char(12)
-	  - Foreign key to `incid` in the 'incid' table.
-	* - bap_habitat
-	  - Char(11)
-	  - Foreign key to `code` in the 'lut_habitat_type' table representing a priority habitat (or potential priority habitat).
-	* - quality_determination
-	  - Char(2)
-	  - Foreign key to `code` in the 'lut_bap_quality_determination' table representing the accuracy with which the priority habitat has been determined.
-	* - quality_interpretation
-	  - Char(2)
-	  - Foreign key to `code` in the 'lut_bap_quality_interpretation' table representing how well the priority habitat was interpreted from the source data.
-	* - interpretation_comments
-	  - Char(254)
-	  - A free-text field containing any comments to explain the reasoning behind the priority habitat determination and interpretation.
+    * - column
+      - data type
+      - description
+    * - bap_id
+      - Integer
+      - A unique ID for each record.
+    * - incid
+      - Char(12)
+      - Foreign key to `incid` in the 'incid' table.
+    * - bap_habitat
+      - Char(11)
+      - Foreign key to `code` in the 'lut_habitat_type' table representing a priority habitat (or potential priority habitat).
+    * - quality_determination
+      - Char(2)
+      - Foreign key to `code` in the 'lut_bap_quality_determination' table representing the accuracy with which the priority habitat has been determined.
+    * - quality_interpretation
+      - Char(2)
+      - Foreign key to `code` in the 'lut_bap_quality_interpretation' table representing how well the priority habitat was interpreted from the source data.
+    * - interpretation_comments
+      - Char(254)
+      - A free-text field containing any comments to explain the reasoning behind the priority habitat determination and interpretation.
 
 .. index::
 	single: Data Tables; incid_condition
@@ -364,30 +366,30 @@ This table contains details of the condition assessments for an INCID. There can
     :header-rows: 1
     :stub-columns: 1
 
-	* - column
-	  - data type
-	  - description
-	* - incid_condition_id
-	  - Integer
-	  - A unique ID for each record.
-	* - incid
-	  - Char(12)
-	  - Foreign key to `incid` in the 'incid' table.
-	* - condition
-	  - Char(2)
-	  - Foreign key to `code` in the 'lut_condition' table representing the condition of the habitat.
-	* - condition_qualifier
-	  - Char(2)
-	  - Foreign key to `code` in the 'lut_condition_qualifier' table representing how the condition of the data was measured.
-	* - condition_date_start
-	  - Integer
-	  - Start date of the data range covered by the condition assessment represented, as the number of days since 01/01/1900.
-	* - condition_date_end
-	  - Integer
-	  - End date of the data range covered by the condition assessment, represented as the number of days since 01/01/1900.
-	* - condition_date_type
-	  - Char(2)
-	  - String that describes the format of the date range covering the condition assessment.
+    * - column
+      - data type
+      - description
+    * - incid_condition_id
+      - Integer
+      - A unique ID for each record.
+    * - incid
+      - Char(12)
+      - Foreign key to `incid` in the 'incid' table.
+    * - condition
+      - Char(2)
+      - Foreign key to `code` in the 'lut_condition' table representing the condition of the habitat.
+    * - condition_qualifier
+      - Char(2)
+      - Foreign key to `code` in the 'lut_condition_qualifier' table representing how the condition of the data was measured.
+    * - condition_date_start
+      - Integer
+      - Start date of the data range covered by the condition assessment represented, as the number of days since 01/01/1900.
+    * - condition_date_end
+      - Integer
+      - End date of the data range covered by the condition assessment, represented as the number of days since 01/01/1900.
+    * - condition_date_type
+      - Char(2)
+      - String that describes the format of the date range covering the condition assessment.
 
 .. index::
 	single: Data Tables; incid_secondary
@@ -402,21 +404,21 @@ This table contains any secondary habitat codes recorded alongside the primary h
     :header-rows: 1
     :stub-columns: 1
 
-	* - column
-	  - data type
-	  - description
-	* - secondary_id
-	  - Integer
-	  - A unique ID for each record.
-	* - incid
-	  - Char(12)
-	  - Foreign key to `incid` in the 'incid' table.
-	* - secondary_habitat
-	  - Char(8)
-	  - Foreign key to `code` in the 'lut_secondary' table representing a secondary habitat code.
-	* - secondary_group
-	  - Char(2)
-	  - Foreign key to `code` in the 'lut_secondary_group' table representing the group the secondary habitat code belongs to.
+    * - column
+      - data type
+      - description
+    * - secondary_id
+      - Integer
+      - A unique ID for each record.
+    * - incid
+      - Char(12)
+      - Foreign key to `incid` in the 'incid' table.
+    * - secondary_habitat
+      - Char(8)
+      - Foreign key to `code` in the 'lut_secondary' table representing a secondary habitat code.
+    * - secondary_group
+      - Char(2)
+      - Foreign key to `code` in the 'lut_secondary_group' table representing the group the secondary habitat code belongs to.
 
 .. index::
 	single: Data Tables; incid_sources
@@ -431,42 +433,42 @@ This table contains details of the source datasets for an INCID. There can be be
     :header-rows: 1
     :stub-columns: 1
 
-	* - column
-	  - data type
-	  - description
-	* - incid_source_id
-	  - Integer
-	  - A unique ID for each record.
-	* - incid
-	  - Char(12)
-	  - Foreign key to `incid` in the 'incid' table.
-	* - source_id
-	  - Integer
-	  - Foreign key to `source_id` in the 'lut_sources' table representing a source dataset.
-	* - source_date_start
-	  - Integer
-	  - Start date of the data range covered by the source dataset represented as the number of days since 01/01/1900.
-	* - source_date_end
-	  - Integer
-	  - End date of the data range covered by the source dataset represented as the number of days since 01/01/1900.
-	* - source_date_type
-	  - Char(2)
-	  - String that describes the format of the date range covering the source dataset.
-	* - source_habitat_class
-	  - Char(5)
-	  - Foreign key to `code` in the 'lut_habitat_class' table representing the habitat classification of the source dataset.
-	* - source_habitat_type
-	  - Char(11)
-	  - Foreign key to `code` in the 'lut_habitat_type' table representing the habitat type of the source dataset.
-	* - source_boundary_importance
-	  - Char(1)
-	  - Foreign key to `code` in the 'lut_important' table representing the relative importance of the source when determining the boundary location of all the features in the INCID.
-	* - source_habitat_importance
-	  - Char(1)
-	  - Foreign key to `code` in the 'lut_important' table representing the relative importance of the source when determining the IHS Habitat and associated multiplex codes of the INCID.
-	* - sort_order
-	  - Integer
-	  - Determines the (ascending) order the sources for each INCID will be displayed in the 'Sources' tab of the dockpane.
+    * - column
+      - data type
+      - description
+    * - incid_source_id
+      - Integer
+      - A unique ID for each record.
+    * - incid
+      - Char(12)
+      - Foreign key to `incid` in the 'incid' table.
+    * - source_id
+      - Integer
+      - Foreign key to `source_id` in the 'lut_sources' table representing a source dataset.
+    * - source_date_start
+      - Integer
+      - Start date of the data range covered by the source dataset represented as the number of days since 01/01/1900.
+    * - source_date_end
+      - Integer
+      - End date of the data range covered by the source dataset represented as the number of days since 01/01/1900.
+    * - source_date_type
+      - Char(2)
+      - String that describes the format of the date range covering the source dataset.
+    * - source_habitat_class
+      - Char(5)
+      - Foreign key to `code` in the 'lut_habitat_class' table representing the habitat classification of the source dataset.
+    * - source_habitat_type
+      - Char(11)
+      - Foreign key to `code` in the 'lut_habitat_type' table representing the habitat type of the source dataset.
+    * - source_boundary_importance
+      - Char(1)
+      - Foreign key to `code` in the 'lut_important' table representing the relative importance of the source when determining the boundary location of all the features in the INCID.
+    * - source_habitat_importance
+      - Char(1)
+      - Foreign key to `code` in the 'lut_important' table representing the relative importance of the source when determining the IHS Habitat and associated multiplex codes of the INCID.
+    * - sort_order
+      - Integer
+      - Determines the (ascending) order the sources for each INCID will be displayed in the 'Sources' tab of the dockpane.
 
 .. tabularcolumns:: |L|L|L|
 
@@ -523,42 +525,42 @@ This table contains details of any proposed Ordnance Survey MasterMap (OSMM) upd
     :header-rows: 1
     :stub-columns: 1
 
-	* - column
-	  - data type
-	  - description
-	* - incid_osmm_update_id
-	  - Integer
-	  - A unique ID for each proposed update.
-	* - incid
-	  - Char(12)
-	  - Foreign key to `incid` in the 'incid' table.
-	* - osmm_xref_id
-	  - Integer
-	  - Foreign key to `osmm_xref_id` in the 'lut_osmm_ihs_xref' table representing a unique set of OS MasterMap attributes.
-	* - spatial_flag
-	  - Char(1)
-	  - Indicates whether part of the new feature has been changed compared to the original framework.
-	* - process_flag
-	  - Integer
-	  - Indicates which step in the external OSMM Update process the proposed update was determined.
-	* - change_flag
-	  - Char(1)
-	  - Indicate whether the proposed primary habitat is the same as the original primary habitat and whether it is a higher or lower level in the habitat hierarchy.
-	* - status
-	  - Integer
-	  - Indicates the current status of the proposed OSMM Update (proposed, pending, applied, ignored or rejected).
-	* - created_date
-	  - DateTime
-	  - The date and time that the proposed update was first created (when the framework was externally processed to integrate more recent OSMM data).
-	* - created_user_id
-	  - Char(40)
-	  - Foreign key to `user_id` in the 'lut_user' table representing the user that created the proposed update.
-	* - last_modified_date
-	  - DateTime
-	  - The date and time that the proposed update was last modified.
-	* - last_modified_user_id
-	  - Char(40)
-	  - Foreign key to `user_id` in the 'lut_user' table representing the user that last modified the proposed update by skipping, accepting, rejecting or ignoring it.
+    * - column
+      - data type
+      - description
+    * - incid_osmm_update_id
+      - Integer
+      - A unique ID for each proposed update.
+    * - incid
+      - Char(12)
+      - Foreign key to `incid` in the 'incid' table.
+    * - osmm_xref_id
+      - Integer
+      - Foreign key to `osmm_xref_id` in the 'lut_osmm_ihs_xref' table representing a unique set of OS MasterMap attributes.
+    * - spatial_flag
+      - Char(1)
+      - Indicates whether part of the new feature has been changed compared to the original framework.
+    * - process_flag
+      - Integer
+      - Indicates which step in the external OSMM Update process the proposed update was determined.
+    * - change_flag
+      - Char(1)
+      - Indicate whether the proposed primary habitat is the same as the original primary habitat and whether it is a higher or lower level in the habitat hierarchy.
+    * - status
+      - Integer
+      - Indicates the current status of the proposed OSMM Update (proposed, pending, applied, ignored or rejected).
+    * - created_date
+      - DateTime
+      - The date and time that the proposed update was first created (when the framework was externally processed to integrate more recent OSMM data).
+    * - created_user_id
+      - Char(40)
+      - Foreign key to `user_id` in the 'lut_user' table representing the user that created the proposed update.
+    * - last_modified_date
+      - DateTime
+      - The date and time that the proposed update was last modified.
+    * - last_modified_user_id
+      - Char(40)
+      - Foreign key to `user_id` in the 'lut_user' table representing the user that last modified the proposed update by skipping, accepting, rejecting or ignoring it.
 
 .. index::
 	single: Data Tables; history
@@ -573,60 +575,60 @@ This table contains a record of **every** change to **every** feature made using
     :header-rows: 1
     :stub-columns: 1
 
-	* - column
-	  - data type
-	  - description
-	* - history_id
-	  - Integer
-	  - A unique ID for each record.
-	* - incid
-	  - Char(12)
-	  - Foreign key to `incid` in the 'incid' table.
-	* - toid
-	  - Char(20)
-	  - The unique Ordnance Survey **to**\ pographical **id**\ entifier of each feature.
-	* - toid_fragment_id
-	  - Char(5)
-	  - An incremental number (prefixed with zeros) used as a unique reference for each fragment of an INCID.
-	* - modified_user_id
-	  - Char(40)
-	  - Foreign key to `user_id` in the 'lut_user' table representing the user that modified the feature.
-	* - modified_date
-	  - DateTime
-	  - The date and time that the features was modified.
-	* - modified_process
-	  - Char(3)
-	  - Foreign key to `code` in the `lut_process` table representing the activity being undertaken when the feature was modified.
-	* - modified_reason
-	  - Char(3)
-	  - Foreign key to `code` in the `lut_reason` table representing the underlying explanation for the change to the feature.
-	* - modified_habprimary
-	  - Char(8)
-	  - Foreign key to `code` in the 'lut_primary' table representing the primary habitat code prior to the changes to the feature.
-	* - modified_habsecond
-	  - Char(80)
-	  - A concatenation list of the secondary codes from the INCID for this feature prior to the changes to the feature.
-	* - modified_operation
-	  - Char(3)
-	  - Foreign key to `code` in the `lut_operation` table representing the operation that undertaken to cause the change to the feature.
-	* - modified_incid
-	  - Char(12)
-	  - The incid prior to the changes to the feature. In the event of a logical split or logical merge this value will be different to the current 'incid', otherwise it will be the same as the current 'incid'.
-	* - modified_fragid
-	  - Char(5)
-	  - The fragid prior to the changes to the feature. In the event of a physical split or logical merge this value will be different to the current 'fragid', otherwise it will be the same as the current 'fragid'.
-	* - modified_length
-	  - Float
-	  - A decimal value of variable precision representing the perimeter length of the feature after the changes to the feature.
-	* - modified_area
-	  - Float
-	  - A decimal value of variable precision representing the spatial area of the feature after the changes to the feature.
-	* - modified_determinqty
-	  - Char(2)
-	  - Foreign key to `code` in the 'lut_quality_determination' table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined prior to the changes to the feature.
-	* - modified_interpqty
-	  - Char(2)
-	  - Foreign key to `code` in the 'lut_quality_interpretation' table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data prior to the changes to the feature.
+    * - column
+      - data type
+      - description
+    * - history_id
+      - Integer
+      - A unique ID for each record.
+    * - incid
+      - Char(12)
+      - Foreign key to `incid` in the 'incid' table.
+    * - toid
+      - Char(20)
+      - The unique Ordnance Survey **to**\ pographical **id**\ entifier of each feature.
+    * - toid_fragment_id
+      - Char(5)
+      - An incremental number (prefixed with zeros) used as a unique reference for each fragment of an INCID.
+    * - modified_user_id
+      - Char(40)
+      - Foreign key to `user_id` in the 'lut_user' table representing the user that modified the feature.
+    * - modified_date
+      - DateTime
+      - The date and time that the features was modified.
+    * - modified_process
+      - Char(3)
+      - Foreign key to `code` in the `lut_process` table representing the activity being undertaken when the feature was modified.
+    * - modified_reason
+      - Char(3)
+      - Foreign key to `code` in the `lut_reason` table representing the underlying explanation for the change to the feature.
+    * - modified_habprimary
+      - Char(8)
+      - Foreign key to `code` in the 'lut_primary' table representing the primary habitat code prior to the changes to the feature.
+    * - modified_habsecond
+      - Char(80)
+      - A concatenation list of the secondary codes from the INCID for this feature prior to the changes to the feature.
+    * - modified_operation
+      - Char(3)
+      - Foreign key to `code` in the `lut_operation` table representing the operation that undertaken to cause the change to the feature.
+    * - modified_incid
+      - Char(12)
+      - The incid prior to the changes to the feature. In the event of a logical split or logical merge this value will be different to the current 'incid', otherwise it will be the same as the current 'incid'.
+    * - modified_fragid
+      - Char(5)
+      - The fragid prior to the changes to the feature. In the event of a physical split or logical merge this value will be different to the current 'fragid', otherwise it will be the same as the current 'fragid'.
+    * - modified_length
+      - Float
+      - A decimal value of variable precision representing the perimeter length of the feature after the changes to the feature.
+    * - modified_area
+      - Float
+      - A decimal value of variable precision representing the spatial area of the feature after the changes to the feature.
+    * - modified_determinqty
+      - Char(2)
+      - Foreign key to `code` in the 'lut_quality_determination' table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined prior to the changes to the feature.
+    * - modified_interpqty
+      - Char(2)
+      - Foreign key to `code` in the 'lut_quality_interpretation' table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data prior to the changes to the feature.
 
 .. index::
 	single: Data Tables; incid_mm_polygons
@@ -641,36 +643,36 @@ This table is a local database **copy** of the attribute table for the HLU polyg
     :header-rows: 1
     :stub-columns: 1
 
-	* - column
-	  - data type
-	  - description
-	* - incid
-	  - Char(12)
-	  - Foreign key to `incid` in the 'incid' table.
-	* - toid
-	  - Char(20)
-	  - The unique Ordnance Survey **to**\ pographical **id**\ entifier of each feature.
-	* - fragid
-	  - Char(5)
-	  - An incremental number (prefixed with zeros) used as a unique reference for each fragment in the INCID.
-	* - habprimary
-	  - Char(8)
-	  - Foreign key to `code` in the 'lut_primary' table representing the primary habitat code.
-	* - habsecond
-	  - Char(80)
-	  - A concatenation list of the secondary codes from the INCID for this feature. This field is automatically maintained by the tool.
-	* - determqty
-	  - Char(2)
-	  - Foreign key to `code` in the 'lut_quality_determination' table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined.
-	* - interpqty
-	  - Char(2)
-	  - Foreign key to `code` in the 'lut_quality_interpretation' table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data.
-	* - shape_length
-	  - Float
-	  - A decimal value of variable precision representing the perimeter length of the feature.
-	* - shape_area
-	  - Float
-	  - A decimal value of variable precision representing the spatial area of the feature.
+    * - column
+      - data type
+      - description
+    * - incid
+      - Char(12)
+      - Foreign key to `incid` in the 'incid' table.
+    * - toid
+      - Char(20)
+      - The unique Ordnance Survey **to**\ pographical **id**\ entifier of each feature.
+    * - fragid
+      - Char(5)
+      - An incremental number (prefixed with zeros) used as a unique reference for each fragment in the INCID.
+    * - habprimary
+      - Char(8)
+      - Foreign key to `code` in the 'lut_primary' table representing the primary habitat code.
+    * - habsecond
+      - Char(80)
+      - A concatenation list of the secondary codes from the INCID for this feature. This field is automatically maintained by the tool.
+    * - determqty
+      - Char(2)
+      - Foreign key to `code` in the 'lut_quality_determination' table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined.
+    * - interpqty
+      - Char(2)
+      - Foreign key to `code` in the 'lut_quality_interpretation' table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data.
+    * - shape_length
+      - Float
+      - A decimal value of variable precision representing the perimeter length of the feature.
+    * - shape_area
+      - Float
+      - A decimal value of variable precision representing the spatial area of the feature.
 
 .. index::
 	single: Data Tables; incid_mm_lines
@@ -685,33 +687,33 @@ This table is a local database **copy** of the attribute table for the HLU polyl
     :header-rows: 1
     :stub-columns: 1
 
-	* - column
-	  - data type
-	  - description
-	* - incid
-	  - Char(12)
-	  - Foreign key to `incid` in the 'incid' table.
-	* - toid
-	  - Char(20)
-	  - The unique Ordnance Survey **to**\ pographical **id**\ entifier of each feature.
-	* - fragid
-	  - Char(5)
-	  - An incremental number (prefixed with zeros) used as a unique reference for each fragment in the INCID.
-	* - habprimary
-	  - Char(8)
-	  - Foreign key to `code` in the 'lut_primary' table representing the primary habitat code.
-	* - habsecond
-	  - Char(80)
-	  - A concatenation list of the secondary codes from the INCID for this feature. This field is automatically maintained by the tool.
-	* - determqty
-	  - Char(2)
-	  - Foreign key to `code` in the 'lut_quality_determination' table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined.
-	* - interpqty
-	  - Char(2)
-	  - Foreign key to `code` in the 'lut_quality_interpretation' table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data.
-	* - shape_length
-	  - Float
-	  - A decimal value of variable precision representing the length of the polyline feature.
+    * - column
+      - data type
+      - description
+    * - incid
+      - Char(12)
+      - Foreign key to `incid` in the 'incid' table.
+    * - toid
+      - Char(20)
+      - The unique Ordnance Survey **to**\ pographical **id**\ entifier of each feature.
+    * - fragid
+      - Char(5)
+      - An incremental number (prefixed with zeros) used as a unique reference for each fragment in the INCID.
+    * - habprimary
+      - Char(8)
+      - Foreign key to `code` in the 'lut_primary' table representing the primary habitat code.
+    * - habsecond
+      - Char(80)
+      - A concatenation list of the secondary codes from the INCID for this feature. This field is automatically maintained by the tool.
+    * - determqty
+      - Char(2)
+      - Foreign key to `code` in the 'lut_quality_determination' table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined.
+    * - interpqty
+      - Char(2)
+      - Foreign key to `code` in the 'lut_quality_interpretation' table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data.
+    * - shape_length
+      - Float
+      - A decimal value of variable precision representing the length of the polyline feature.
 
 .. note::
 	Polyline features do not have an area, therefore the **shape_area** attribute is not included in this table.
@@ -729,33 +731,33 @@ This table is a local database **copy** of the attribute table for the HLU point
     :header-rows: 1
     :stub-columns: 1
 
-	* - column
-	  - data type
-	  - description
-	* - incid
-	  - Char(12)
-	  - Foreign key to `incid` in the 'incid' table.
-	* - toid
-	  - Char(20)
-	  - The unique Ordnance Survey **to**\ pographical **id**\ entifier of each feature.
-	* - fragid
-	  - Char(5)
-	  - An incremental number (prefixed with zeros) used as a unique reference for each fragment in the INCID.
-	* - habprimary
-	  - Char(8)
-	  - Foreign key to `code` in the 'lut_primary' table representing the primary habitat code.
-	* - habsecond
-	  - Char(80)
-	  - A concatenation list of the secondary codes from the INCID for this feature. This field is automatically maintained by the tool.
-	* - determqty
-	  - Char(2)
-	  - Foreign key to `code` in the 'lut_quality_determination' table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined.
-	* - interpqty
-	  - Char(2)
-	  - Foreign key to `code` in the 'lut_quality_interpretation' table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data.
+    * - column
+      - data type
+      - description
+    * - incid
+      - Char(12)
+      - Foreign key to `incid` in the 'incid' table.
+    * - toid
+      - Char(20)
+      - The unique Ordnance Survey **to**\ pographical **id**\ entifier of each feature.
+    * - fragid
+      - Char(5)
+      - An incremental number (prefixed with zeros) used as a unique reference for each fragment in the INCID.
+    * - habprimary
+      - Char(8)
+      - Foreign key to `code` in the 'lut_primary' table representing the primary habitat code.
+    * - habsecond
+      - Char(80)
+      - A concatenation list of the secondary codes from the INCID for this feature. This field is automatically maintained by the tool.
+    * - determqty
+      - Char(2)
+      - Foreign key to `code` in the 'lut_quality_determination' table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined.
+    * - interpqty
+      - Char(2)
+      - Foreign key to `code` in the 'lut_quality_interpretation' table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data.
 
-	.. note::
-		Point features do not have a length or area, therefore the **shape_length** and **shape_area** attributes are not included in this table.
+.. note::
+	Point features do not have a length or area, therefore the **shape_length** and **shape_area** attributes are not included in this table.
 
 .. raw:: latex
 
