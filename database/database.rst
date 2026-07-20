@@ -17,7 +17,7 @@ The database consists of 4 types of tables as follows:
 Data Tables
 ===========
 
-Tables in the database prefixed by 'incid' are **data** tables and hence contain all the attribute data relating to the GIS features. The attributes have been separated into 14 tables to 'normalise' the data which reduces storage space, improves performance and provides greater flexibility.
+Tables in the database prefixed by ``incid`` are **data** tables and hence contain all the attribute data relating to the GIS features. The attributes have been separated into 14 tables to ``normalise`` the data which reduces storage space, improves performance and provides greater flexibility.
 
 .. sidebar:: Key to Data Tables
 
@@ -137,6 +137,7 @@ This is the main data table with one record per INCID. All the other data tables
 .. list-table:: incid fields
     :header-rows: 1
     :stub-columns: 1
+	:widths: 20 10 50
 
     * - column
       - data type
@@ -197,7 +198,7 @@ This is the main data table with one record per INCID. All the other data tables
       - The date and time that the INCID was last modified.
     * - last_modified_user_id
       - Char(40)
-      - Foreign key to `user_id` in the 'lut_user' table representing the user that last modified the INCID attributes or split or merged the INCID.
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified the INCID attributes or split or merged the INCID.
 
 .. note::
 	The ihs_habitat and ihs_summary fields are no longer maintained by the tool, but is retained in the database for legacy purposes. However, they may be cleared during updates or bulk updates depending upon the application options.
@@ -214,6 +215,7 @@ This table contains any IHS Matrix codes recorded alongside an IHS Habitat code 
 .. list-table:: incid_ihs_matrix fields
     :header-rows: 1
     :stub-columns: 1
+	:widths: 20 10 50
 
     * - column
       - data type
@@ -243,6 +245,7 @@ This table contains any IHS Formation codes recorded alongside an IHS Habitat co
 .. list-table:: incid_ihs_formation fields
     :header-rows: 1
     :stub-columns: 1
+	:widths: 20 10 50
 
     * - column
       - data type
@@ -252,10 +255,10 @@ This table contains any IHS Formation codes recorded alongside an IHS Habitat co
       - A unique ID for each record.
     * - incid
       - Char(12)
-      - Foreign key to `incid` in the 'incid' table.
+      - Foreign key to ``incid`` in the ``incid`` table.
     * - formation
       - Char(8)
-      - Foreign key to `code` in the 'lut_ihs_formation' table representing an IHS Formation type.
+      - Foreign key to ``code`` in the ``lut_ihs_formation`` table representing an IHS Formation type.
 
 .. note::
 	These codes are no longer maintained by the tool, but are retained in the database for legacy purposes. However, they may be cleared during updates or bulk updates depending upon the application options.
@@ -272,19 +275,20 @@ This table contains any IHS Management codes recorded alongside an IHS Habitat c
 .. list-table:: incid_ihs_management fields
     :header-rows: 1
     :stub-columns: 1
+	:widths: 20 10 50
 
     * - column
       - data type
       - description
     * - management_id
-      - Integer - A unique ID for each record.
+      - Integer
       - A unique ID for each record.
     * - incid
       - Char(12)
-      - Foreign key to `incid` in the 'incid' table.
+      - Foreign key to ``incid`` in the ``incid`` table.
     * - management
       - Char(8)
-      - Foreign key to `code` in the 'lut_ihs_management' table representing an IHS Management type.
+      - Foreign key to ``code`` in the ``lut_ihs_management`` table representing an IHS Management type.
 
 .. note::
 	These codes are no longer maintained by the tool, but are retained in the database for legacy purposes. However, they may be cleared during updates or bulk updates depending upon the application options.
@@ -301,6 +305,7 @@ This table contains any IHS Complex codes recorded alongside an IHS Habitat code
 .. list-table:: incid_ihs_complex fields
     :header-rows: 1
     :stub-columns: 1
+	:widths: 20 10 50
 
     * - column
       - data type
@@ -310,10 +315,10 @@ This table contains any IHS Complex codes recorded alongside an IHS Habitat code
       - A unique ID for each record.
     * - incid
       - Char(12)
-      - Foreign key to `incid` in the 'incid' table.
+      - Foreign key to ``incid`` in the ``incid`` table.
     * - complex
       - Char(8)
-      - Foreign key to `code` in the 'lut_ihs_complex' table representing an IHS Complex type.
+      - Foreign key to ``code`` in the ``lut_ihs_complex`` table representing an IHS Complex type.
 
 .. note::
 	These codes are no longer maintained by the tool, but are retained in the database for legacy purposes. However, they may be cleared during updates or bulk updates depending upon the application options.
@@ -330,6 +335,7 @@ This table contains details of the priority habitats and potential priority habi
 .. list-table:: incid_bap fields
     :header-rows: 1
     :stub-columns: 1
+	:widths: 20 10 50
 
     * - column
       - data type
@@ -339,19 +345,20 @@ This table contains details of the priority habitats and potential priority habi
       - A unique ID for each record.
     * - incid
       - Char(12)
-      - Foreign key to `incid` in the 'incid' table.
+      - Foreign key to ``incid`` in the ``incid`` table.
     * - bap_habitat
       - Char(11)
-      - Foreign key to `code` in the 'lut_habitat_type' table representing a priority habitat (or potential priority habitat).
+      - Foreign key to ``code`` in the ``lut_habitat_type`` table representing a priority habitat (or potential priority habitat).
     * - quality_determination
       - Char(2)
-      - Foreign key to `code` in the 'lut_bap_quality_determination' table representing the accuracy with which the priority habitat has been determined.
+      - Foreign key to ``code`` in the ``lut_bap_quality_determination`` table representing the accuracy with which the priority habitat has been determined.
     * - quality_interpretation
       - Char(2)
-      - Foreign key to `code` in the 'lut_bap_quality_interpretation' table representing how well the priority habitat was interpreted from the source data.
+      - Foreign key to ``code`` in the ``lut_bap_quality_interpretation`` table representing how well the priority habitat was interpreted from the source data.
     * - interpretation_comments
       - Char(254)
       - A free-text field containing any comments to explain the reasoning behind the priority habitat determination and interpretation.
+	  :widths: 20 10 50
 
 .. index::
 	single: Data Tables; incid_condition
@@ -365,6 +372,7 @@ This table contains details of the condition assessments for an INCID. There can
 .. list-table:: incid_condition fields
     :header-rows: 1
     :stub-columns: 1
+	:widths: 20 10 50
 
     * - column
       - data type
@@ -374,13 +382,13 @@ This table contains details of the condition assessments for an INCID. There can
       - A unique ID for each record.
     * - incid
       - Char(12)
-      - Foreign key to `incid` in the 'incid' table.
+      - Foreign key to ``incid`` in the ``incid`` table.
     * - condition
       - Char(2)
-      - Foreign key to `code` in the 'lut_condition' table representing the condition of the habitat.
+      - Foreign key to ``code`` in the ``lut_condition`` table representing the condition of the habitat.
     * - condition_qualifier
       - Char(2)
-      - Foreign key to `code` in the 'lut_condition_qualifier' table representing how the condition of the data was measured.
+      - Foreign key to ``code`` in the ``lut_condition_qualifier`` table representing how the condition of the data was measured.
     * - condition_date_start
       - Integer
       - Start date of the data range covered by the condition assessment represented, as the number of days since 01/01/1900.
@@ -403,6 +411,7 @@ This table contains any secondary habitat codes recorded alongside the primary h
 .. list-table:: incid_secondary fields
     :header-rows: 1
     :stub-columns: 1
+	:widths: 20 10 50
 
     * - column
       - data type
@@ -412,13 +421,13 @@ This table contains any secondary habitat codes recorded alongside the primary h
       - A unique ID for each record.
     * - incid
       - Char(12)
-      - Foreign key to `incid` in the 'incid' table.
+      - Foreign key to ``incid`` in the ``incid`` table.
     * - secondary_habitat
       - Char(8)
-      - Foreign key to `code` in the 'lut_secondary' table representing a secondary habitat code.
+      - Foreign key to ``code`` in the ``lut_secondary`` table representing a secondary habitat code.
     * - secondary_group
       - Char(2)
-      - Foreign key to `code` in the 'lut_secondary_group' table representing the group the secondary habitat code belongs to.
+      - Foreign key to ``code`` in the ``lut_secondary_group`` table representing the group the secondary habitat code belongs to.
 
 .. index::
 	single: Data Tables; incid_sources
@@ -432,6 +441,7 @@ This table contains details of the source datasets for an INCID. There can be be
 .. list-table:: incid_sources fields
     :header-rows: 1
     :stub-columns: 1
+	:widths: 20 10 50
 
     * - column
       - data type
@@ -441,10 +451,10 @@ This table contains details of the source datasets for an INCID. There can be be
       - A unique ID for each record.
     * - incid
       - Char(12)
-      - Foreign key to `incid` in the 'incid' table.
+      - Foreign key to ``incid`` in the ``incid`` table.
     * - source_id
       - Integer
-      - Foreign key to `source_id` in the 'lut_sources' table representing a source dataset.
+      - Foreign key to ``source_id`` in the ``lut_sources`` table representing a source dataset.
     * - source_date_start
       - Integer
       - Start date of the data range covered by the source dataset represented as the number of days since 01/01/1900.
@@ -456,16 +466,16 @@ This table contains details of the source datasets for an INCID. There can be be
       - String that describes the format of the date range covering the source dataset.
     * - source_habitat_class
       - Char(5)
-      - Foreign key to `code` in the 'lut_habitat_class' table representing the habitat classification of the source dataset.
+      - Foreign key to ``code`` in the ``lut_habitat_class`` table representing the habitat classification of the source dataset.
     * - source_habitat_type
       - Char(11)
-      - Foreign key to `code` in the 'lut_habitat_type' table representing the habitat type of the source dataset.
+      - Foreign key to ``code`` in the ``lut_habitat_type`` table representing the habitat type of the source dataset.
     * - source_boundary_importance
       - Char(1)
-      - Foreign key to `code` in the 'lut_important' table representing the relative importance of the source when determining the boundary location of all the features in the INCID.
+      - Foreign key to ``code`` in the ``lut_important`` table representing the relative importance of the source when determining the boundary location of all the features in the INCID.
     * - source_habitat_importance
       - Char(1)
-      - Foreign key to `code` in the 'lut_important' table representing the relative importance of the source when determining the IHS Habitat and associated multiplex codes of the INCID.
+      - Foreign key to ``code`` in the ``lut_important`` table representing the relative importance of the source when determining the IHS Habitat and associated multiplex codes of the INCID.
     * - sort_order
       - Integer
       - Determines the (ascending) order the sources for each INCID will be displayed in the 'Sources' tab of the dockpane.
@@ -524,6 +534,7 @@ This table contains details of any proposed Ordnance Survey MasterMap (OSMM) upd
 .. list-table:: incid_osmm_update fields
     :header-rows: 1
     :stub-columns: 1
+	:widths: 20 10 50
 
     * - column
       - data type
@@ -533,10 +544,10 @@ This table contains details of any proposed Ordnance Survey MasterMap (OSMM) upd
       - A unique ID for each proposed update.
     * - incid
       - Char(12)
-      - Foreign key to `incid` in the 'incid' table.
+      - Foreign key to ``incid`` in the ``incid`` table.
     * - osmm_xref_id
       - Integer
-      - Foreign key to `osmm_xref_id` in the 'lut_osmm_ihs_xref' table representing a unique set of OS MasterMap attributes.
+      - Foreign key to ``osmm_xref_id`` in the ``lut_osmm_ihs_xref`` table representing a unique set of OS MasterMap attributes.
     * - spatial_flag
       - Char(1)
       - Indicates whether part of the new feature has been changed compared to the original framework.
@@ -554,13 +565,13 @@ This table contains details of any proposed Ordnance Survey MasterMap (OSMM) upd
       - The date and time that the proposed update was first created (when the framework was externally processed to integrate more recent OSMM data).
     * - created_user_id
       - Char(40)
-      - Foreign key to `user_id` in the 'lut_user' table representing the user that created the proposed update.
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that created the proposed update.
     * - last_modified_date
       - DateTime
       - The date and time that the proposed update was last modified.
     * - last_modified_user_id
       - Char(40)
-      - Foreign key to `user_id` in the 'lut_user' table representing the user that last modified the proposed update by skipping, accepting, rejecting or ignoring it.
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified the proposed update by skipping, accepting, rejecting or ignoring it.
 
 .. index::
 	single: Data Tables; history
@@ -574,6 +585,7 @@ This table contains a record of **every** change to **every** feature made using
 .. list-table:: history fields
     :header-rows: 1
     :stub-columns: 1
+	:widths: 20 10 50
 
     * - column
       - data type
@@ -583,7 +595,7 @@ This table contains a record of **every** change to **every** feature made using
       - A unique ID for each record.
     * - incid
       - Char(12)
-      - Foreign key to `incid` in the 'incid' table.
+      - Foreign key to ``incid`` in the ``incid`` table.
     * - toid
       - Char(20)
       - The unique Ordnance Survey **to**\ pographical **id**\ entifier of each feature.
@@ -592,31 +604,31 @@ This table contains a record of **every** change to **every** feature made using
       - An incremental number (prefixed with zeros) used as a unique reference for each fragment of an INCID.
     * - modified_user_id
       - Char(40)
-      - Foreign key to `user_id` in the 'lut_user' table representing the user that modified the feature.
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that modified the feature.
     * - modified_date
       - DateTime
       - The date and time that the features was modified.
     * - modified_process
       - Char(3)
-      - Foreign key to `code` in the `lut_process` table representing the activity being undertaken when the feature was modified.
+      - Foreign key to ``code`` in the ``lut_process`` table representing the activity being undertaken when the feature was modified.
     * - modified_reason
       - Char(3)
-      - Foreign key to `code` in the `lut_reason` table representing the underlying explanation for the change to the feature.
+      - Foreign key to ``code`` in the ``lut_reason`` table representing the underlying explanation for the change to the feature.
     * - modified_habprimary
       - Char(8)
-      - Foreign key to `code` in the 'lut_primary' table representing the primary habitat code prior to the changes to the feature.
+      - Foreign key to ``code`` in the ``lut_primary`` table representing the primary habitat code prior to the changes to the feature.
     * - modified_habsecond
       - Char(80)
       - A concatenation list of the secondary codes from the INCID for this feature prior to the changes to the feature.
     * - modified_operation
       - Char(3)
-      - Foreign key to `code` in the `lut_operation` table representing the operation that undertaken to cause the change to the feature.
+      - Foreign key to ``code`` in the ``lut_operation`` table representing the operation that undertaken to cause the change to the feature.
     * - modified_incid
       - Char(12)
-      - The incid prior to the changes to the feature. In the event of a logical split or logical merge this value will be different to the current 'incid', otherwise it will be the same as the current 'incid'.
+      - The incid prior to the changes to the feature. In the event of a logical split or logical merge this value will be different to the current **incid**, otherwise it will be the same as the current **incid**.
     * - modified_fragid
       - Char(5)
-      - The fragid prior to the changes to the feature. In the event of a physical split or logical merge this value will be different to the current 'fragid', otherwise it will be the same as the current 'fragid'.
+      - The fragid prior to the changes to the feature. In the event of a physical split or logical merge this value will be different to the current **fragid**, otherwise it will be the same as the current **fragid**.
     * - modified_length
       - Float
       - A decimal value of variable precision representing the perimeter length of the feature after the changes to the feature.
@@ -625,10 +637,10 @@ This table contains a record of **every** change to **every** feature made using
       - A decimal value of variable precision representing the spatial area of the feature after the changes to the feature.
     * - modified_determinqty
       - Char(2)
-      - Foreign key to `code` in the 'lut_quality_determination' table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined prior to the changes to the feature.
+      - Foreign key to ``code`` in the ``lut_quality_determination`` table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined prior to the changes to the feature.
     * - modified_interpqty
       - Char(2)
-      - Foreign key to `code` in the 'lut_quality_interpretation' table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data prior to the changes to the feature.
+      - Foreign key to ``code`` in the ``lut_quality_interpretation`` table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data prior to the changes to the feature.
 
 .. index::
 	single: Data Tables; incid_mm_polygons
@@ -642,13 +654,14 @@ This table is a local database **copy** of the attribute table for the HLU polyg
 .. list-table:: incid_mm_polygons fields
     :header-rows: 1
     :stub-columns: 1
+	:widths: 20 10 50
 
     * - column
       - data type
       - description
     * - incid
       - Char(12)
-      - Foreign key to `incid` in the 'incid' table.
+      - Foreign key to ``incid`` in the ``incid`` table.
     * - toid
       - Char(20)
       - The unique Ordnance Survey **to**\ pographical **id**\ entifier of each feature.
@@ -657,16 +670,16 @@ This table is a local database **copy** of the attribute table for the HLU polyg
       - An incremental number (prefixed with zeros) used as a unique reference for each fragment in the INCID.
     * - habprimary
       - Char(8)
-      - Foreign key to `code` in the 'lut_primary' table representing the primary habitat code.
+      - Foreign key to ``code`` in the ``lut_primary`` table representing the primary habitat code.
     * - habsecond
       - Char(80)
       - A concatenation list of the secondary codes from the INCID for this feature. This field is automatically maintained by the tool.
     * - determqty
       - Char(2)
-      - Foreign key to `code` in the 'lut_quality_determination' table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined.
+      - Foreign key to ``code`` in the ``lut_quality_determination`` table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined.
     * - interpqty
       - Char(2)
-      - Foreign key to `code` in the 'lut_quality_interpretation' table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data.
+      - Foreign key to ``code`` in the ``lut_quality_interpretation`` table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data.
     * - shape_length
       - Float
       - A decimal value of variable precision representing the perimeter length of the feature.
@@ -686,13 +699,14 @@ This table is a local database **copy** of the attribute table for the HLU polyl
 .. list-table:: incid_mm_lines fields
     :header-rows: 1
     :stub-columns: 1
+	:widths: 20 10 50
 
     * - column
       - data type
       - description
     * - incid
       - Char(12)
-      - Foreign key to `incid` in the 'incid' table.
+      - Foreign key to ``incid`` in the ``incid`` table.
     * - toid
       - Char(20)
       - The unique Ordnance Survey **to**\ pographical **id**\ entifier of each feature.
@@ -701,16 +715,16 @@ This table is a local database **copy** of the attribute table for the HLU polyl
       - An incremental number (prefixed with zeros) used as a unique reference for each fragment in the INCID.
     * - habprimary
       - Char(8)
-      - Foreign key to `code` in the 'lut_primary' table representing the primary habitat code.
+      - Foreign key to ``code`` in the ``lut_primary`` table representing the primary habitat code.
     * - habsecond
       - Char(80)
       - A concatenation list of the secondary codes from the INCID for this feature. This field is automatically maintained by the tool.
     * - determqty
       - Char(2)
-      - Foreign key to `code` in the 'lut_quality_determination' table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined.
+      - Foreign key to ``code`` in the ``lut_quality_determination`` table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined.
     * - interpqty
       - Char(2)
-      - Foreign key to `code` in the 'lut_quality_interpretation' table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data.
+      - Foreign key to ``code`` in the ``lut_quality_interpretation`` table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data.
     * - shape_length
       - Float
       - A decimal value of variable precision representing the length of the polyline feature.
@@ -730,13 +744,14 @@ This table is a local database **copy** of the attribute table for the HLU point
 .. list-table:: incid_mm_points fields
     :header-rows: 1
     :stub-columns: 1
+	:widths: 20 10 50
 
     * - column
       - data type
       - description
     * - incid
       - Char(12)
-      - Foreign key to `incid` in the 'incid' table.
+      - Foreign key to ``incid`` in the ``incid`` table.
     * - toid
       - Char(20)
       - The unique Ordnance Survey **to**\ pographical **id**\ entifier of each feature.
@@ -745,16 +760,16 @@ This table is a local database **copy** of the attribute table for the HLU point
       - An incremental number (prefixed with zeros) used as a unique reference for each fragment in the INCID.
     * - habprimary
       - Char(8)
-      - Foreign key to `code` in the 'lut_primary' table representing the primary habitat code.
+      - Foreign key to ``code`` in the ``lut_primary`` table representing the primary habitat code.
     * - habsecond
       - Char(80)
       - A concatenation list of the secondary codes from the INCID for this feature. This field is automatically maintained by the tool.
     * - determqty
       - Char(2)
-      - Foreign key to `code` in the 'lut_quality_determination' table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined.
+      - Foreign key to ``code`` in the ``lut_quality_determination`` table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined.
     * - interpqty
       - Char(2)
-      - Foreign key to `code` in the 'lut_quality_interpretation' table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data.
+      - Foreign key to ``code`` in the ``lut_quality_interpretation`` table representing how well the primary and secondary habitats of the INCID for this feature were interpreted from the source data.
 
 .. note::
 	Point features do not have a length or area, therefore the **shape_length** and **shape_area** attributes are not included in this table.
@@ -771,7 +786,7 @@ This table is a local database **copy** of the attribute table for the HLU point
 Lookup Tables
 =============
 
-Tables in the database prefixed by 'lut\_' are **lookup** tables and are used in many drop-down lists in the user interfaces to restrict choices to only valid or appropriate values for the organisation.
+Tables in the database prefixed by ``lut\_`` are **lookup** tables and are used in many drop-down lists in the user interfaces to restrict choices to only valid or appropriate values for the organisation.
 
 .. sidebar:: Key to Lookup Tables
 
@@ -815,7 +830,7 @@ Tables in the database prefixed by 'lut\_' are **lookup** tables and are used in
 
 	* Changes to the lookup tables won't take effect for HLU Tool instances that are running. ArcGIS Pro will need to be closed and re-started to ensure the changes take effect.
 	* Lookup table values are relevant to the **whole** database system and hence any changes will affect **all** users of that database.
-	* **All** records in tables containing a 'sort_order' attribute must have a numerical value set or they may not appear in the relevant drop-down lists.
+	* **All** records in tables containing a ``sort_order`` attribute must have a numerical value set or they may not appear in the relevant drop-down lists.
 
 .. seealso::
 	See :Ref:`configuring_luts` for more information on configuring lookup tables.
@@ -998,7 +1013,7 @@ lut_habitat_class
 This table contains details of all the habitat classification systems (e.g. UKHab, Phase 1, IHS, NVC) that can be used to filter the primary habitat code selection on the Habitats tab of the dockpane.
 
 	code
-		A unique identifier for each habitat classification. Referenced by `habitat_class_code` in 'lut_habitat_type' and 'lut_primary'.
+		A unique identifier for each habitat classification. Referenced by ``habitat_class_code`` in ``lut_habitat_type`` and ``lut_primary``.
 
 	description
 		A brief name or description that will appear in the 'Class' drop-down list on the Habitats tab and the 'Habitat Class' drop-down list on the Sources tab.
@@ -1026,10 +1041,10 @@ lut_habitat_type
 This table contains details of all the habitat types within each habitat classification. Selecting a type on the Habitats tab filters the 'Primary' drop-down list to show only relevant primary habitat codes.
 
 	code
-		A unique identifier for each habitat type. Referenced as `code_habitat_type` in 'lut_habitat_type_primary' and 'lut_habitat_type_secondary'.
+		A unique identifier for each habitat type. Referenced as ``code_habitat_type`` in ``lut_habitat_type_primary`` and ``lut_habitat_type_secondary``.
 
 	habitat_class_code
-		Foreign key to `code` in the 'lut_habitat_class' table. Determines which classification system this type belongs to and hence which types appear when a given class is selected.
+		Foreign key to ``code`` in the ``lut_habitat_class`` table. Determines which classification system this type belongs to and hence which types appear when a given class is selected.
 
 	name
 		A short name for the habitat type.
@@ -1057,19 +1072,19 @@ This table contains details of all the habitat types within each habitat classif
 lut_primary
 -----------
 
-This table contains all the UKHab primary habitat codes that can be assigned to an INCID. The codes that appear in the 'Primary' drop-down list on the Habitats tab are determined by the selected habitat class and type via the 'lut_habitat_type_primary' junction table.
+This table contains all the UKHab primary habitat codes that can be assigned to an INCID. The codes that appear in the 'Primary' drop-down list on the Habitats tab are determined by the selected habitat class and type via the ``lut_habitat_type_primary`` junction table.
 
 	code
-		A unique identifier for each primary habitat code. Stored in `habitat_primary` in the 'incid' table.
+		A unique identifier for each primary habitat code. Stored in ``habitat_primary`` in the ``incid`` table.
 
 	description
 		A brief description that will appear in the 'Primary' drop-down list on the Habitats tab.
 
 	category
-		Foreign key to `code` in the 'lut_primary_category' table. Only primary codes whose category has `is_local` set to True are included in drop-down lists.
+		Foreign key to ``code`` in the ``lut_primary_category`` table. Only primary codes whose category has ``is_local`` set to True are included in drop-down lists.
 
 	habitat_class_code
-		Foreign key to `code` in the 'lut_habitat_class' table. Used by the tool to derive the habitat class and version for a given primary code.
+		Foreign key to ``code`` in the ``lut_habitat_class`` table. Used by the tool to derive the habitat class and version for a given primary code.
 
 	nvc_codes
 		[Optional]. A comma-separated list of NVC codes associated with this primary habitat code. Displayed read-only in the 'NVC Codes' field on the Habitats tab when this primary code is selected.
@@ -1091,10 +1106,10 @@ This table contains all the UKHab primary habitat codes that can be assigned to 
 lut_primary_category
 --------------------
 
-This table groups primary habitat codes into categories. The `is_local` flag on this table acts as a second-level filter — only primary codes whose category is marked as local will appear in drop-down lists, regardless of the `is_local` flag on 'lut_primary' itself.
+This table groups primary habitat codes into categories. The ``is_local`` flag on this table acts as a second-level filter — only primary codes whose category is marked as local will appear in drop-down lists, regardless of the ``is_local`` flag on ``lut_primary`` itself.
 
 	code
-		A unique identifier for each category. Referenced by `category` in 'lut_primary'.
+		A unique identifier for each category. Referenced by ``category`` in ``lut_primary``.
 
 	description
 		A brief description of the category.
@@ -1116,10 +1131,10 @@ lut_habitat_type_primary
 This junction table maps habitat types to their valid primary habitat codes. It controls which primary codes appear in the 'Primary' drop-down list for a given habitat type selection, and whether a code is shown as 'preferred' (bold, above the divider line) or simply valid.
 
 	code_habitat_type
-		Foreign key to `code` in the 'lut_habitat_type' table.
+		Foreign key to ``code`` in the ``lut_habitat_type`` table.
 
 	code_primary
-		Foreign key to `code` in the 'lut_primary' table. Supports a trailing wildcard suffix (e.g. ``g1*``) to match all primary codes beginning with that prefix.
+		Foreign key to ``code`` in the ``lut_primary`` table. Supports a trailing wildcard suffix (e.g. ``g1*``) to match all primary codes beginning with that prefix.
 
 	preferred
 		Boolean. When set to 'True' (minus 1) the primary code is displayed in **bold** above the separator line in the 'Primary' drop-down list for this habitat type.
@@ -1144,7 +1159,7 @@ lut_secondary_group
 This table groups secondary habitat codes into named categories, which appear in the 'Group' drop-down list on the Habitats tab to help users narrow down secondary code choices.
 
 	code
-		A unique identifier for each secondary group. Referenced by `code_group` in 'lut_secondary'. Also stored in `secondary_group` in the 'incid_secondary' table.
+		A unique identifier for each secondary group. Referenced by ``code_group`` in ``lut_secondary``. Also stored in ``secondary_group`` in the ``incid_secondary`` table.
 
 	description
 		A brief description or name that will appear in the 'Group' drop-down list on the Habitats tab.
@@ -1163,16 +1178,16 @@ This table groups secondary habitat codes into named categories, which appear in
 lut_secondary
 -------------
 
-This table contains all the UKHab secondary habitat codes that can be assigned to an INCID alongside a primary habitat code. The codes that appear in the 'Code' drop-down list on the Habitats tab are filtered by the selected secondary group and, when validation is active, by the selected primary habitat via the 'lut_primary_secondary' junction table.
+This table contains all the UKHab secondary habitat codes that can be assigned to an INCID alongside a primary habitat code. The codes that appear in the 'Code' drop-down list on the Habitats tab are filtered by the selected secondary group and, when validation is active, by the selected primary habitat via the ``lut_primary_secondary`` junction table.
 
 	code
-		A unique identifier for each secondary habitat code. Stored in `secondary_habitat` in the 'incid_secondary' table.
+		A unique identifier for each secondary habitat code. Stored in ``secondary_habitat`` in the ``incid_secondary`` table.
 
 	description
 		A brief description that will appear in the 'Code' drop-down list on the Habitats tab.
 
 	code_group
-		Foreign key to `code` in the 'lut_secondary_group' table. Determines which group this secondary code belongs to.
+		Foreign key to ``code`` in the ``lut_secondary_group`` table. Determines which group this secondary code belongs to.
 
 	is_local
 		Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
@@ -1191,10 +1206,10 @@ lut_habitat_type_secondary
 This junction table maps habitat types to their permitted secondary habitat codes and flags whether each secondary code is mandatory for that habitat type. It populates the read-only 'Mandatory' and 'Optional' fields on the Habitats tab.
 
 	code_habitat_type
-		Foreign key to `code` in the 'lut_habitat_type' table.
+		Foreign key to ``code`` in the ``lut_habitat_type`` table.
 
 	code_secondary
-		Foreign key to `code` in the 'lut_secondary' table.
+		Foreign key to ``code`` in the ``lut_secondary`` table.
 
 	mandatory
 		Integer. Set to ``1`` if the secondary code is mandatory for the habitat type (displayed in the 'Mandatory' field and validated according to the **Habitat/Secondary Validation** setting in the Options). Set to ``0`` if the code is optional (displayed in the 'Optional' field).
@@ -1213,10 +1228,10 @@ lut_primary_secondary
 This junction table maps primary habitat codes to their valid secondary habitat codes. When the **Primary/Secondary Validation** option is active, only secondary codes present in this table for the selected primary habitat will appear in the 'Code' drop-down list on the Habitats tab.
 
 	code_primary
-		Foreign key to `code` in the 'lut_primary' table.
+		Foreign key to ``code`` in the ``lut_primary`` table.
 
 	code_secondary
-		Foreign key to `code` in the 'lut_secondary' table.
+		Foreign key to ``code`` in the ``lut_secondary`` table.
 
 	.. note::
 		Whether this table is used to restrict secondary code choices is controlled by the **Primary/Secondary Validation** option. See :ref:`options_validation` in the HLU Tool User Guide for details.
@@ -1294,7 +1309,7 @@ The following lookup tables can be updated to tailor their **is_local** and/or *
 		Contains all the UKHab primary habitat codes that can be assigned to INCIDs. See :ref:`lut_primary` for more details.
 
 	lut_primary_category
-		Contains the categories used to group primary habitat codes. The `is_local` flag on this table suppresses all primary codes in a category from appearing in drop-down lists.
+		Contains the categories used to group primary habitat codes. The ``is_local`` flag on this table suppresses all primary codes in a category from appearing in drop-down lists.
 
 	lut_primary_secondary
 		Contains the junction records that map primary habitat codes to their valid secondary habitat codes. Used when Primary/Secondary Validation is active. **[is_local not applicable]**
@@ -1347,12 +1362,12 @@ exports
 This table lists all the export 'formats' that can be used when exporting data.
 
 	export_id
-		A unique identifier used to determines which fields are selected from the 'exports_fields' table.
+		A unique identifier used to determines which fields are selected from the ``exports_fields`` table.
 
 	export_name
 		The name which will be displayed in the 'Export Format' drop-down list.
 
-Once a new export format has been added to the 'exports' table the fields to be included in the export must be added to the 'exports_fields' table.
+Once a new export format has been added to the ``exports`` table the fields to be included in the export must be added to the ``exports_fields`` table.
 
 .. index::
 	single: Export Tables; exports_fields
@@ -1367,13 +1382,13 @@ exports_fields
 	* GIS controlled fields such as obj, shape, perimeter, area, x, y, etc. should not be included. These fields will be automatically added to the exported layer.
 	* Fields already in the active GIS layer (e.g. toid, toid_fragment_id, ihs_category, ihs_summary) are automatically included in the exported layer and hence should not be added to the exports_fields table.
 
-This table defines which fields are to be exported for each export format in the 'exports' table. It also defines what the export fields will be called, the order they will appear in the new GIS layer and the number of occurrences of each field (where fields can appear in multiple table records.)
+This table defines which fields are to be exported for each export format in the ``exports`` table. It also defines what the export fields will be called, the order they will appear in the new GIS layer and the number of occurrences of each field (where fields can appear in multiple table records.)
 
 	export_field_id
 		A unique identifier for the field.
 
 	export_id
-		The unique identifier for the export type in the 'exports' table (see :ref:`exports`).
+		The unique identifier for the export type in the ``exports`` table (see :ref:`exports`).
 
 	table_name
 		The name of the source table in the database containing the column to be exported.
