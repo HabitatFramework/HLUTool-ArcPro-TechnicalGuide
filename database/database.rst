@@ -137,7 +137,7 @@ This is the main data table with one record per INCID. All the other data tables
 .. list-table:: incid fields
     :header-rows: 1
     :stub-columns: 1
-	:widths: 20 10 50
+    :widths: 20 10 50
 
     * - column
       - data type
@@ -215,7 +215,7 @@ This table contains any IHS Matrix codes recorded alongside an IHS Habitat code 
 .. list-table:: incid_ihs_matrix fields
     :header-rows: 1
     :stub-columns: 1
-	:widths: 20 10 50
+    :widths: 20 10 50
 
     * - column
       - data type
@@ -245,7 +245,7 @@ This table contains any IHS Formation codes recorded alongside an IHS Habitat co
 .. list-table:: incid_ihs_formation fields
     :header-rows: 1
     :stub-columns: 1
-	:widths: 20 10 50
+    :widths: 20 10 50
 
     * - column
       - data type
@@ -275,7 +275,7 @@ This table contains any IHS Management codes recorded alongside an IHS Habitat c
 .. list-table:: incid_ihs_management fields
     :header-rows: 1
     :stub-columns: 1
-	:widths: 20 10 50
+    :widths: 20 10 50
 
     * - column
       - data type
@@ -305,7 +305,7 @@ This table contains any IHS Complex codes recorded alongside an IHS Habitat code
 .. list-table:: incid_ihs_complex fields
     :header-rows: 1
     :stub-columns: 1
-	:widths: 20 10 50
+    :widths: 20 10 50
 
     * - column
       - data type
@@ -335,7 +335,7 @@ This table contains details of the priority habitats and potential priority habi
 .. list-table:: incid_bap fields
     :header-rows: 1
     :stub-columns: 1
-	:widths: 20 10 50
+    :widths: 20 10 50
 
     * - column
       - data type
@@ -372,7 +372,7 @@ This table contains details of the condition assessments for an INCID. There can
 .. list-table:: incid_condition fields
     :header-rows: 1
     :stub-columns: 1
-	:widths: 20 10 50
+    :widths: 20 10 50
 
     * - column
       - data type
@@ -411,7 +411,7 @@ This table contains any secondary habitat codes recorded alongside the primary h
 .. list-table:: incid_secondary fields
     :header-rows: 1
     :stub-columns: 1
-	:widths: 20 10 50
+    :widths: 20 10 50
 
     * - column
       - data type
@@ -441,7 +441,7 @@ This table contains details of the source datasets for an INCID. There can be be
 .. list-table:: incid_sources fields
     :header-rows: 1
     :stub-columns: 1
-	:widths: 20 10 50
+    :widths: 20 10 50
 
     * - column
       - data type
@@ -534,7 +534,7 @@ This table contains details of any proposed Ordnance Survey MasterMap (OSMM) upd
 .. list-table:: incid_osmm_update fields
     :header-rows: 1
     :stub-columns: 1
-	:widths: 20 10 50
+    :widths: 20 10 50
 
     * - column
       - data type
@@ -585,7 +585,7 @@ This table contains a record of **every** change to **every** feature made using
 .. list-table:: history fields
     :header-rows: 1
     :stub-columns: 1
-	:widths: 20 10 50
+    :widths: 20 10 50
 
     * - column
       - data type
@@ -654,7 +654,7 @@ This table is a local database **copy** of the attribute table for the HLU polyg
 .. list-table:: incid_mm_polygons fields
     :header-rows: 1
     :stub-columns: 1
-	:widths: 20 10 50
+    :widths: 20 10 50
 
     * - column
       - data type
@@ -699,7 +699,7 @@ This table is a local database **copy** of the attribute table for the HLU polyl
 .. list-table:: incid_mm_lines fields
     :header-rows: 1
     :stub-columns: 1
-	:widths: 20 10 50
+    :widths: 20 10 50
 
     * - column
       - data type
@@ -744,7 +744,7 @@ This table is a local database **copy** of the attribute table for the HLU point
 .. list-table:: incid_mm_points fields
     :header-rows: 1
     :stub-columns: 1
-	:widths: 20 10 50
+    :widths: 20 10 50
 
     * - column
       - data type
