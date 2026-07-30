@@ -19,22 +19,22 @@ Data Tables
 
 Tables in the database prefixed by ``incid`` are **data** tables and hence contain all the attribute data relating to the GIS features. The attributes have been separated into 14 tables to ``normalise`` the data which reduces storage space, improves performance and provides greater flexibility.
 
-.. sidebar:: Key to Data Tables
+**Key to Data Tables**
 
-	1. incid
-	2. incid_ihs_matrix
-	3. incid_ihs_formation
-	4. incid_ihs_management
-	5. incid_ihs_complex
-	6. incid_bap
-	7. incid_secondary
-	8. incid_condition
-	9. incid_sources
-	10. incid_osmm_updates
-	11. history
-	12. incid_mm_polygons
-	13. incid_mm_lines
-	14. incid_mm_points
+1. incid
+2. incid_ihs_matrix
+3. incid_ihs_formation
+4. incid_ihs_management
+5. incid_ihs_complex
+6. incid_bap
+7. incid_secondary
+8. incid_condition
+9. incid_sources
+10. incid_osmm_updates
+11. history
+12. incid_mm_polygons
+13. incid_mm_lines
+14. incid_mm_points
 
 .. note::
 	The HLU Tool now supports polyline and point GIS layers in addition to polygon layers. The **incid_mm_lines** and **incid_mm_points** tables store the GIS feature mappings for line and point geometry types respectively, with the same structure as the **incid_mm_polygons** table.
@@ -137,7 +137,7 @@ This is the main data table with one record per INCID. All the other data tables
 .. list-table:: incid fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 10 50
+    :widths: 24 10 50
 
     * - column
       - data type
@@ -177,7 +177,7 @@ This is the main data table with one record per INCID. All the other data tables
       - The version of the primary habitat classification system used when the INCID attributes were last updated.
     * - habitat_primary
       - Char(8)
-      - Foreign key to ``code`` in the ``lut_primary`` table representing the main UKHab primary habitat code for the INCID.
+      - Foreign key to ``code`` in the ``lut_primary`` table representing the main primary habitat code for the INCID.
     * - habitat_secondaries
       - Char(80)
       - A concatenated list of the secondary habitat codes for the INCID.
@@ -215,7 +215,7 @@ This table contains any IHS Matrix codes recorded alongside an IHS Habitat code 
 .. list-table:: incid_ihs_matrix fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 10 50
+    :widths: 15 10 50
 
     * - column
       - data type
@@ -245,7 +245,7 @@ This table contains any IHS Formation codes recorded alongside an IHS Habitat co
 .. list-table:: incid_ihs_formation fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 10 50
+    :widths: 15 10 50
 
     * - column
       - data type
@@ -275,7 +275,7 @@ This table contains any IHS Management codes recorded alongside an IHS Habitat c
 .. list-table:: incid_ihs_management fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 10 50
+    :widths: 15 10 50
 
     * - column
       - data type
@@ -305,7 +305,7 @@ This table contains any IHS Complex codes recorded alongside an IHS Habitat code
 .. list-table:: incid_ihs_complex fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 10 50
+    :widths: 15 10 50
 
     * - column
       - data type
@@ -335,7 +335,7 @@ This table contains details of the priority habitats and potential priority habi
 .. list-table:: incid_bap fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 10 50
+    :widths: 22 10 50
 
     * - column
       - data type
@@ -441,7 +441,7 @@ This table contains details of the source datasets for an INCID. There can be be
 .. list-table:: incid_sources fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 10 50
+    :widths: 24 10 50
 
     * - column
       - data type
@@ -534,7 +534,7 @@ This table contains details of any proposed Ordnance Survey MasterMap (OSMM) upd
 .. list-table:: incid_osmm_update fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 10 50
+    :widths: 22 10 50
 
     * - column
       - data type
@@ -585,7 +585,7 @@ This table contains a record of **every** change to **every** feature made using
 .. list-table:: history fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 10 50
+    :widths: 22 10 50
 
     * - column
       - data type
@@ -654,7 +654,7 @@ This table is a local database **copy** of the attribute table for the HLU polyg
 .. list-table:: incid_mm_polygons fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 10 50
+    :widths: 15 10 50
 
     * - column
       - data type
@@ -699,7 +699,7 @@ This table is a local database **copy** of the attribute table for the HLU polyl
 .. list-table:: incid_mm_lines fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 10 50
+    :widths: 15 10 50
 
     * - column
       - data type
@@ -744,7 +744,7 @@ This table is a local database **copy** of the attribute table for the HLU point
 .. list-table:: incid_mm_points fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 10 50
+    :widths: 15 10 50
 
     * - column
       - data type
@@ -788,43 +788,43 @@ Lookup Tables
 
 Tables in the database prefixed by ``lut\_`` are **lookup** tables and are used in many drop-down lists in the user interfaces to restrict choices to only valid or appropriate values for the organisation.
 
-.. sidebar:: Key to Lookup Tables
+**Key to Lookup Tables**
 
-	1. lut_boundary_map
-	2. lut_condition
-	3. lut_condition_qualifier
-	4. lut_habitat_class
-	5. lut_habitat_type
-	6. lut_habitat_type_primary
-	7. lut_habitat_type_secondary
-	8. lut_ihs_complex
-	9. lut_ihs_formation
-	10. lut_ihs_habitat
-	11. lut_ihs_management
-	12. lut_ihs_matrix
-	13. lut_importance
-	14. lut_last_incid
-	15. lut_legacy_habitat
-	16. lut_operation
-	17. lut_osmm_habitat_xref
-	18. lut_osmm_updates_change
-	19. lut_osmm_updates_process
-	20. lut_osmm_updates_spatial
-	21. lut_primary
-	22. lut_primary_bap_habitat
-	23. lut_primary_category
-	24. lut_primary_secondary
-	25. lut_process
-	26. lut_quality_determination
-	27. lut_quality_interpretation
-	28. lut_reason
-	29. lut_secondary
-	30. lut_secondary_bap_habitat
-	31. lut_secondary_group
-	32. lut_site_id
-	33. lut_sources
-	34. lut_user
-	35. lut_version
+1. lut_boundary_map
+2. lut_condition
+3. lut_condition_qualifier
+4. lut_habitat_class
+5. lut_habitat_type
+6. lut_habitat_type_primary
+7. lut_habitat_type_secondary
+8. lut_ihs_complex
+9. lut_ihs_formation
+10. lut_ihs_habitat
+11. lut_ihs_management
+12. lut_ihs_matrix
+13. lut_importance
+14. lut_last_incid
+15. lut_legacy_habitat
+16. lut_operation
+17. lut_osmm_habitat_xref
+18. lut_osmm_updates_change
+19. lut_osmm_updates_process
+20. lut_osmm_updates_spatial
+21. lut_primary
+22. lut_primary_bap_habitat
+23. lut_primary_category
+24. lut_primary_secondary
+25. lut_process
+26. lut_quality_determination
+27. lut_quality_interpretation
+28. lut_reason
+29. lut_secondary
+30. lut_secondary_bap_habitat
+31. lut_secondary_group
+32. lut_site_id
+33. lut_sources
+34. lut_user
+35. lut_version
 
 .. note::
 
@@ -835,407 +835,776 @@ Tables in the database prefixed by ``lut\_`` are **lookup** tables and are used 
 .. seealso::
 	See :Ref:`configuring_luts` for more information on configuring lookup tables.
 
-Some of the lookup tables contain records and settings that are generic to all HLU Tool installations and hence should be considered as 'system' tables Changes to these tables should only be done under the guidance of the system developer.
+There are three types of lookup tables in the HLU Tool database:
 
-Some of the lookup tables contain records and settings that are generic to all HLU Tool installations and hence should be considered as 'system' records, indicated by the **system_supplied** attribute set to 'True' (minus one). These records are configured centrally and updates are applied to HLU Tool installations using the HLUDbUpdater.exe tool (see :doc:`../updater/updater` for more details) or SQL scripts.
+	1. System lookup tables
+	2. Local lookup tables
+	3. User lookup tables
 
-The remaining lookup tables can be configured for a given HLU Tool installation to tailor them to the specific requirements of each organisation.
+.. raw:: latex
 
-
-The following lookup tables can be updated to tailor local requirements:
-
-.. index::
-	single: Lookup Tables; lut_users
-
-.. _lut_users:
-
-lut_users
----------
-
-This table contains details of all the users that have editing capability with the HLU Tool and indicates if they are also able to perform 'bulk' updates.
-
-	user_id
-		The user's *Windows* login ID. If the user logs in to a domain then the login should be entered in the format: *[Domain]\\[LoginID]*. [1]_
-
-	user_name
-		The name which will be displayed in the 'By' fields of the INCID section and the History tab.
-
-	bulk_update
-		Determines whether the user has permissions to run a bulk update to change attributes for all selected records. Ticking this checkbox gives the user permission to run bulk updates.
-
-	sort_order
-		Determines the order user names would be displayed in any relevant drop-down. This field is not currently used (as there are no drop-down lists that display users.)
-
-	.. caution::
-		Bulk update permission should only be assigned to **expert** users and should only be used with caution as mistakes can have major affects on the data.
-
-.. [1] The 'user_id' of the current user is shown in the **About** window, accessible from the HLU Tool ribbon.
-
-.. seealso::
-	See :ref:`configuring_users` for more information.
+	\newpage
 
 .. index::
-	single: Lookup Tables; lut_sources
+	single: Lookup Tables; System
 
-.. _lut_sources:
+.. _lookup_tables_system:
 
-lut_sources
------------
+System lookup tables
+--------------------
 
-This table contains details of all the source datasets that can be referenced as a 'Source' by an INCID. New sources can be added to this table to allow them to be selected in the 'Sources' tab of the dockpane.
+These tables contain records and settings that are generic to all HLU Tool installations. Changes to these tables should **only** ever be made under the guidance of the system developer.
 
-	source_id
-		A unique ID for each source.
+lut_boundary_map
+	Contains the list of map types that can be assigned to the 'Boundary Map' and 'Digitisation Map' fields on the 'Details' tab of the dockpane.
 
-	source_name
-		The name which appears in the 'Name' drop-down list in the 'Sources' tab.
+lut_ihs_complex
+	Contains all the IHS Complex codes that can be assigned using the 'Complex' fields on the 'Habitats' tab of the dockpane.
 
-	source_date_default
-		[Optional]. If a date is entered, the 'Vague Date' field in the 'Sources' tab will be set to this value (if blank) when this source is selected. If the date is left blank, the 'Vague Date' field will not be altered.
+lut_ihs_formation
+	Contains all the IHS Formation codes that can be assigned using the 'Formation' fields on the 'Habitats' tab of the dockpane.
 
-	sort_order
-		Determines the order source names are displayed in the 'Name' drop-down list in the 'Sources' tab.
+lut_ihs_habitat
+	Contains all the IHS Habitats that can be assigned to INCIDs using the 'Habitat' field on the 'Habitats' tab of the dockpane.
 
-.. note::
-	Old sources cannot be removed if they are already referenced by an INCID. In this case, the source name should be prefixed with 'Inactive' and the sort_order changed to 999 so that it is less likely to be selected in the 'Sources' tab.
+lut_ihs_management
+	Contains all the IHS Management codes that can be assigned using the 'Management' fields on the 'Habitats' tab of the dockpane.
 
-.. seealso::
-	See :ref:`configuring_sources` for more information.
+lut_ihs_matrix
+	Contains all the IHS Matrix codes that can be assigned using the 'Matrix' fields on the 'Habitats' tab of the dockpane.
 
-.. index::
-	single: Lookup Tables; lut_legacy_habitat
+lut_importance
+	Contains the difference levels of Importance that can be assigned to Sources using the 'Boundary Imp.' and 'Habitat Imp.' fields on the 'Sources' tab of the dockpane.
 
-.. _lut_legacy_habitat:
+lut_last_incid
+	Contains the last INCID number that was assigned to a feature when the HLU Tool. This is used to determine the next INCID number to assign when creating a new feature. It applies to all feature types (polygon, polyline and point) and is used to ensure that INCIDs are unique across all feature types.
 
-lut_legacy_habitat
-------------------
+lut_operation
+	Contains the operation types that are assigned to history records when a feature is modified, split, merged or inserted. The operation types are used to record the type of change that was made to a feature and are displayed in the 'Operation' field on the 'History' tab of the dockpane.
 
-This table contains details of all the legacy habitats that can be referenced as a by an INCID.
+lut_osmm_updates_change
+	Contains the change types that are assigned to proposed OSMM updates when the habitat framework has been externally processed to integrate more recent OSMM data. The change types are used to record whether the proposed primary habitat is the same as the original primary habitat and whether it is a higher or lower level in the habitat hierarchy.
 
-	code
-		A unique 50 character field for each legacy habitat.
+lut_osmm_updates_process
+	Contains the process types that are assigned to proposed OSMM updates when the habitat framework has been externally processed to integrate more recent OSMM data. The process types are used to record the type of change to the primary habitat, and the number of sources assigned, to the original INCID.
 
-	description
-		A brief description or name that will appear in the 'Legacy Habitat' drop-down list in the main window.
+lut_osmm_updates_spatial
+	Contains the spatial types that are assigned to proposed OSMM updates when the habitat framework has been externally processed to integrate more recent OSMM data. The spatial types are used to record whether part of the new feature has been spatially changed compared to the original framework. An ‘X’ denotes when a feature overlaps two or more features in the original framework, and so a portion of the new feature may now be assigned to a different INCID than it was originally.
 
-	sort_order
-		Determines the order legacy habitats are displayed in the 'Legacy Habitat' drop-down list in the main window.
+lut_primary_bap_habitat
+	Contains the mapping between primary habitats and priority habitats. It controls which priority habitats are automatically assigned to INCIDs on the 'Priority' tab of the dockpane based on the selected 'Primary' habitat on the 'Habitats' tab.
 
-.. seealso::
-	See :ref:`configuring_legacy_habitats` for more information.
+lut_quality_determination
+	Contains the determination quality types that can be assigned to INCIDs on the 'Details tab of the dockpane, and to individual 'Priority Habitats' and 'Potential Priority Habitats' on the 'Priority' tab of the dockpane.
 
-.. index::
-	single: Lookup Tables; lut_process
-
-.. _lut_process:
-
-lut_process
------------
-
-This table contains details of all the processes that can be referenced as the activity being undertaken when applying updates with the HLU Tool.
-
-	code
-		A unique 3 character field for each source.
-
-	description
-		A brief description or name that will appear in the 'Process' drop-down list in the ribbon.
-
-	sort_order
-		Determines the order processes are displayed in the 'Process' drop-down list in the ribbon.
-
-.. index::
-	single: Lookup Tables; lut_reason
-
-.. _lut_reason:
+lut_quality_interpretation
+	Contains the interpretation quality types that can be assigned to INCIDs on the 'Details tab of the dockpane, and to individual 'Priority Habitats' and 'Potential Priority Habitats' on the 'Priority' tab of the dockpane.
 
 lut_reason
-----------
+	Contains details of all the reasons that can be referenced in the 'Reason' field on the HLU Tool ribbon to indicate the activity being undertaken when using the HLU Tool. See :ref:`lut_reason` for more details.
 
-This table contains details of all the reasons that can be referenced as the underlying explanation for applying updates with the HLU Tool.
+lut_secondary_bap_habitat
+	Contains the mapping between secondary habitats and priority habitats. It controls which priority habitats are automatically assigned to INCIDs on the 'Priority' tab of the dockpane based on the selected 'Secondary' habitats on the 'Habitats' tab.
 
-	code
-		A unique 3 character field for each source.
+lut_site_id
+	Contains the unique site identifiers that are assigned to new INCIDs when new features are created. Different site identifiers are used for polygon, line and point features, and must be unique across all HLU Tool installations.
 
-	description
-		A brief description or name that will appear in the 'Reason' drop-down list in the ribbon.
+lut_version
+	Contains the minimum application and database version numbers that are required to connect to this database instance, and the current data version. These are used to ensure that the correct version of the HLU Tool is being used with the database. The ``data_version`` attribute is used to indicated whether the database contains 'Live' or 'Test' data, and appears on the 'About' dialog in the HLU Tool.
 
-	sort_order
-		Determines the order processes are displayed in the 'Reason' drop-down list in the ribbon.
+	.. caution::
+		The ``data_version`` attribute indicates whether the database contains 'Live' or 'Test' data, and hence should be changed whenever a database is copied from a 'Live' environment to a 'Test' environment, or vice versa.
+
+.. raw:: latex
+
+	\newpage
 
 .. index::
-	single: Lookup Tables; lut_osmm_ihs_xref
+	single: Lookup Tables; Local
 
-.. _lut_osmm_ihs_xref:
+.. _lookup_tables_local:
 
-lut_osmm_ihs_xref
------------------
+Local lookup tables
+-------------------
 
-This table contains a cross-reference between all the OS MasterMap feature types and the IHS habitat and multiplex codes. It is used when reviewing and bulk applying proposed OSMM Updates.
+These tables also contain records and settings that are generic to all HLU Tool installations. However, they can be configured for a given HLU Tool installation, by setting the **is_local** attribute to 'True' or 'False', so that they are either used or ignored by the HLU Tool.
 
-	osmm_xref_id
-		A unique ID for each cross-reference. This field is referenced by the incid_osmm_update table.
+	* lut_condition
+	* lut_condition_qualifier
+	* lut_habitat_class
+	* lut_habitat_type
+	* lut_habitat_type_primary
+	* lut_habitat_type_secondary
+	* lut_primary
+	* lut_primary_category
+	* lut_primary_secondary
+	* lut_secondary
+	* lut_secondary_group
 
-	make
-		An OS MasterMap attribute. Where known it indicates whether the real-world nature of the feature is man-made, natural or both (multiple), otherwise the value is unclassified or unknown.
+.. seealso::
+	See :ref:`configuring_luts` for more information on configuring lookup tables.
 
-	desc_group
-		An OS MasterMap attribute. The primary classification of a feature assigned to one or more of 21 groups, most of which are categories of real-world topographic objects, such as path, building or natural environment.
+.. index::
+	single: Lookup Tables; lut_condition
 
-	desc_term
-		An OS MasterMap attribute. If present gives further classification information about a feature typically specifying the natural land cover types present.
+.. _lut_condition:
 
-	theme
-		An OS MasterMap attribute. The theme(s) that the feature belongs to.
+**lut_condition**
 
-	feat_code
-		An OS MasterMap attribute. A numerical feature code (a five-digit integer) assigned to each feature.
+This table contains details of all the condition assessment levels (e.g. Good, Fairly Good, Moderate, etc.) that can be referenced by an INCID. The codes appear in the 'Condition' drop-down list on the 'Details' tab.
 
-	ihs_habitat to ihs_complex2
-		The IHS habitat and multiplex codes corresponding to the unique collection of above OS MasterMap attributes.
+.. list-table:: lut_condition fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 12 50
 
-	ihs_summary
-		The consolidated summary of the above IHS habitat and multiplex codes.
+    * - column
+      - description
+    * - code
+      - A unique identifier for each condition. Referenced by ``condition`` in ``incid_condition``.
+    * - description
+      - A brief name or description that will appear in the 'Condition' drop-down list on the 'Details' tab.
+    * - is_local
+      - Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
+    * - sort_order
+      - Determines the order conditions are displayed in the 'Condition' drop-down list on the 'Details' tab.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
 
-	manmade
-		Indicates if the OS MasterMap feature is considered man-made or not. The classification 'man-made' may also include natural features where OS MasterMap is always considered to be accurate (such as rivers, lakes, ponds, road/rail verges, etc.)
+.. index::
+	single: Lookup Tables; lut_condition_qualifier
 
-	comments
-		Any user comments relating to the cross-referencing.
+.. _lut_condition_qualifier:
+
+**lut_condition_qualifier**
+
+This table contains all of the condition assessment methods (e.g. Defra metric assessment, Rapid assessment, etc.) that can be used to qualify the condition of the habitat. The codes appear in the 'Condition Qualifier' drop-down list on the 'Details' tab.
+
+.. list-table:: lut_condition_qualifier fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 12 50
+
+    * - column
+      - description
+    * - code
+      - A unique identifier for each condition qualifier. Referenced by ``condition_qualifier`` in ``incid_condition``.
+    * - description
+      - A brief name or description that will appear in the 'Condition Qualifier' drop-down list on the 'Details' tab.
+    * - is_local
+      - Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
+    * - sort_order
+      - Determines the order condition qualifiers are displayed in the 'Condition Qualifier' drop-down list on the 'Details' tab.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
 
 .. index::
 	single: Lookup Tables; lut_habitat_class
 
 .. _lut_habitat_class:
 
-lut_habitat_class
------------------
+**lut_habitat_class**
 
-This table contains details of all the habitat classification systems (e.g. UKHab, Phase 1, IHS, NVC) that can be used to filter the primary habitat code selection on the Habitats tab of the dockpane.
+This table contains all of the habitat classification systems (e.g. UKHab, Phase 1, IHS, NVC) that appear in the 'Class' drop-down list on the 'Habitats' tab and the 'Habitat Class' drop-down list on the 'Sources' tab. It is used to filter the primary habitat code selection on the 'Habitats' tab of the dockpane. See :ref:`lut_habitat_class` for more details.
 
-	code
-		A unique identifier for each habitat classification. Referenced by ``habitat_class_code`` in ``lut_habitat_type`` and ``lut_primary``.
+.. list-table:: lut_habitat_class fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 15 50
 
-	description
-		A brief name or description that will appear in the 'Class' drop-down list on the Habitats tab and the 'Habitat Class' drop-down list on the Sources tab.
-
-	habitat_version
-		The version string for this habitat classification (e.g. '1.0'). Returned by the tool when recording which classification version was active at the time of an update.
-
-	is_local
-		Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
-
-	sort_order
-		Determines the order habitat classifications are displayed in the 'Class' drop-down list on the Habitats tab.
-
-.. seealso::
-	See :ref:`configuring_luts` for more information on configuring lookup tables.
+    * - column
+      - description
+    * - code
+      - A unique identifier for each habitat classification. Referenced by ``habitat_class_code`` in ``lut_habitat_type`` and in ``lut_primary``.
+    * - description
+      - A brief name or description that will appear in the 'Class' drop-down list on the 'Habitats' tab and the 'Habitat Class' drop-down list on the 'Sources' tab.
+    * - habitat_version
+      - The version string for this habitat classification (e.g. '1.0'). Returned by the tool when recording which classification version was active at the time of an update.
+    * - is_local
+      - Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
+    * - sort_order
+      - Determines the order habitat classifications are displayed in the 'Class' drop-down list on the 'Habitats' tab.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
 
 .. index::
 	single: Lookup Tables; lut_habitat_type
 
 .. _lut_habitat_type:
 
-lut_habitat_type
-----------------
+**lut_habitat_type**
 
-This table contains details of all the habitat types within each habitat classification. Selecting a type on the Habitats tab filters the 'Primary' drop-down list to show only relevant primary habitat codes.
+This table contains all of the habitat types within each habitat classification that appear in the 'Type' drop-down list on the 'Habitats' tab (for the selected 'Class') and the 'Habitat Type' drop-down list on the 'Sources' tab. Selecting a type on the 'Habitats' tab filters the 'Primary' drop-down list to show only relevant primary habitat codes. See :ref:`lut_habitat_type` for more details.
 
-	code
-		A unique identifier for each habitat type. Referenced as ``code_habitat_type`` in ``lut_habitat_type_primary`` and ``lut_habitat_type_secondary``.
+.. list-table:: lut_habitat_type fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 20 50
 
-	habitat_class_code
-		Foreign key to ``code`` in the ``lut_habitat_class`` table. Determines which classification system this type belongs to and hence which types appear when a given class is selected.
-
-	name
-		A short name for the habitat type.
-
-	description
-		A longer description that will appear in the 'Type' drop-down list on the Habitats tab and the 'Habitat Type' drop-down list on the Sources tab.
-
-	bap_priority
-		Boolean. When set to 'True' (minus 1) this habitat type will also appear in the priority habitat drop-down lists on the Priority tab.
-
-	is_local
-		Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
-
-	sort_order
-		Determines the order habitat types are displayed in the 'Type' drop-down list on the Habitats tab.
-
-.. seealso::
-	See :ref:`configuring_luts` for more information on configuring lookup tables.
-
-.. index::
-	single: Lookup Tables; lut_primary
-
-.. _lut_primary:
-
-lut_primary
------------
-
-This table contains all the UKHab primary habitat codes that can be assigned to an INCID. The codes that appear in the 'Primary' drop-down list on the Habitats tab are determined by the selected habitat class and type via the ``lut_habitat_type_primary`` junction table.
-
-	code
-		A unique identifier for each primary habitat code. Stored in ``habitat_primary`` in the ``incid`` table.
-
-	description
-		A brief description that will appear in the 'Primary' drop-down list on the Habitats tab.
-
-	category
-		Foreign key to ``code`` in the ``lut_primary_category`` table. Only primary codes whose category has ``is_local`` set to True are included in drop-down lists.
-
-	habitat_class_code
-		Foreign key to ``code`` in the ``lut_habitat_class`` table. Used by the tool to derive the habitat class and version for a given primary code.
-
-	nvc_codes
-		[Optional]. A comma-separated list of NVC codes associated with this primary habitat code. Displayed read-only in the 'NVC Codes' field on the Habitats tab when this primary code is selected.
-
-	is_local
-		Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
-
-	sort_order
-		Determines the order primary codes are displayed within the 'Primary' drop-down list.
-
-.. seealso::
-	See :ref:`configuring_luts` for more information on configuring lookup tables.
-
-.. index::
-	single: Lookup Tables; lut_primary_category
-
-.. _lut_primary_category:
-
-lut_primary_category
---------------------
-
-This table groups primary habitat codes into categories. The ``is_local`` flag on this table acts as a second-level filter — only primary codes whose category is marked as local will appear in drop-down lists, regardless of the ``is_local`` flag on ``lut_primary`` itself.
-
-	code
-		A unique identifier for each category. Referenced by ``category`` in ``lut_primary``.
-
-	description
-		A brief description of the category.
-
-	is_local
-		Set to 'True' (minus 1) to allow primary codes in this category to appear in drop-down lists, or 'False' (zero) to suppress them all.
-
-	sort_order
-		Determines the order categories are displayed in any relevant drop-down lists.
+    * - column
+      - description
+    * - code
+      - A unique identifier for each habitat type. Referenced as ``code_habitat_type`` in ``lut_habitat_type_primary`` and in ``lut_habitat_type_secondary``.
+    * - habitat_class_code
+      - Foreign key to ``code`` in the ``lut_habitat_class`` table. Determines which classification system this type belongs to and hence which types appear when a given class is selected.
+    * - name
+      - A short name for the habitat type.
+    * - description
+      - A longer description that will appear in the 'Type' drop-down list on the 'Habitats' tab and the 'Habitat Type' drop-down list on the 'Sources' tab.
+    * - bap_priority
+      - Boolean. When set to 'True' (minus 1) this habitat type will also appear in the 'Priority habitat' drop-down lists on the 'Priority' tab.
+    * - is_local
+      - Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
+    * - sort_order
+      - Determines the order habitat types are displayed in the 'Type' drop-down list on the 'Habitats' tab.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
 
 .. index::
 	single: Lookup Tables; lut_habitat_type_primary
 
 .. _lut_habitat_type_primary:
 
-lut_habitat_type_primary
-------------------------
+**lut_habitat_type_primary**
 
-This junction table maps habitat types to their valid primary habitat codes. It controls which primary codes appear in the 'Primary' drop-down list for a given habitat type selection, and whether a code is shown as 'preferred' (bold, above the divider line) or simply valid.
+This cross-reference table maps habitat types to their valid and preferred primary habitat codes, and their suggested secondary codes and habitat tips. It controls which primary codes appear in the 'Primary' drop-down list for a given habitat type, and whether a code is shown as 'preferred' (bold, above the divider line) or not.
 
-	code_habitat_type
-		Foreign key to ``code`` in the ``lut_habitat_type`` table.
+.. list-table:: lut_habitat_type_primary fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 20 50
 
-	code_primary
-		Foreign key to ``code`` in the ``lut_primary`` table. Supports a trailing wildcard suffix (e.g. ``g1*``) to match all primary codes beginning with that prefix.
-
-	preferred
-		Boolean. When set to 'True' (minus 1) the primary code is displayed in **bold** above the separator line in the 'Primary' drop-down list for this habitat type.
-
-	habitat_secondaries
-		[Optional]. A space- or comma-separated list of secondary habitat codes that are suggested for this habitat type and primary code combination. Displayed read-only in the 'Suggested' field on the Habitats tab.
-
-	comments
-		[Optional]. Free-text guidance notes for the selected habitat type and primary code combination. Displayed via the **Habitat Tips** info button on the Habitats tab.
-
-	sort_order
-		Determines the order records are evaluated when multiple wildcard matches exist.
-
-.. index::
-	single: Lookup Tables; lut_secondary_group
-
-.. _lut_secondary_group:
-
-lut_secondary_group
--------------------
-
-This table groups secondary habitat codes into named categories, which appear in the 'Group' drop-down list on the Habitats tab to help users narrow down secondary code choices.
-
-	code
-		A unique identifier for each secondary group. Referenced by ``code_group`` in ``lut_secondary``. Also stored in ``secondary_group`` in the ``incid_secondary`` table.
-
-	description
-		A brief description or name that will appear in the 'Group' drop-down list on the Habitats tab.
-
-	is_local
-		Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
-
-	sort_order
-		Determines the order secondary groups are displayed in the 'Group' drop-down list on the Habitats tab.
-
-.. index::
-	single: Lookup Tables; lut_secondary
-
-.. _lut_secondary:
-
-lut_secondary
--------------
-
-This table contains all the UKHab secondary habitat codes that can be assigned to an INCID alongside a primary habitat code. The codes that appear in the 'Code' drop-down list on the Habitats tab are filtered by the selected secondary group and, when validation is active, by the selected primary habitat via the ``lut_primary_secondary`` junction table.
-
-	code
-		A unique identifier for each secondary habitat code. Stored in ``secondary_habitat`` in the ``incid_secondary`` table.
-
-	description
-		A brief description that will appear in the 'Code' drop-down list on the Habitats tab.
-
-	code_group
-		Foreign key to ``code`` in the ``lut_secondary_group`` table. Determines which group this secondary code belongs to.
-
-	is_local
-		Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
-
-	sort_order
-		Determines the order secondary codes are displayed in the 'Code' drop-down list. Codes with a sort_order value below 100 are treated as 'essential' codes and are accessible via the **<All Essentials>** group option in the 'Group' drop-down list.
+    * - column
+      - description
+    * - code_habitat_type
+      - Foreign key to ``code`` in the ``lut_habitat_type`` table.
+    * - code_primary
+      - Foreign key to ``code`` in the ``lut_primary`` table. Supports a trailing wildcard suffix (e.g. ``g1*``) to match all primary codes beginning with that prefix.
+    * - preferred
+      - When set to 'True' (minus 1) the primary code is displayed in **bold** above the separator line in the 'Primary' drop-down list for this habitat type.
+    * - habitat_secondaries
+      - A space- or comma-separated list of secondary habitat codes that are suggested for this habitat type and primary code combination. Displayed read-only in the 'Suggested' field on the 'Habitats' tab.
+    * - comments
+      - Free-text guidance notes for the selected habitat type and primary code combination. Displayed via the **Habitat Tips** info button on the 'Habitats' tab.
+    * - is_local
+      - Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
 
 .. index::
 	single: Lookup Tables; lut_habitat_type_secondary
 
 .. _lut_habitat_type_secondary:
 
-lut_habitat_type_secondary
---------------------------
+**lut_habitat_type_secondary**
 
-This junction table maps habitat types to their permitted secondary habitat codes and flags whether each secondary code is mandatory for that habitat type. It populates the read-only 'Mandatory' and 'Optional' fields on the Habitats tab.
+This cross-reference table maps habitat types to their permitted secondary habitat codes, and flags whether each secondary code is mandatory or just optional for that habitat type. It populates the read-only 'Mandatory' and 'Optional' fields on the 'Habitats' tab.
 
-	code_habitat_type
-		Foreign key to ``code`` in the ``lut_habitat_type`` table.
+.. list-table:: lut_habitat_type_secondary fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 15 50
 
-	code_secondary
-		Foreign key to ``code`` in the ``lut_secondary`` table.
-
-	mandatory
-		Integer. Set to ``1`` if the secondary code is mandatory for the habitat type (displayed in the 'Mandatory' field and validated according to the **Habitat/Secondary Validation** setting in the Options). Set to ``0`` if the code is optional (displayed in the 'Optional' field).
+    * - column
+      - description
+    * - code_habitat_type
+      - Foreign key to ``code`` in the ``lut_habitat_type`` table.
+    * - code_secondary
+      - Foreign key to ``code`` in the ``lut_secondary`` table.
+    * - mandatory
+      - Integer. Set to ``1`` if the secondary code is mandatory for the habitat type (displayed in the 'Mandatory' field and validated according to the **Habitat/Secondary Validation** setting in the Options). Set to ``0`` if the code is optional (displayed in the 'Optional' field).
+    * - is_local
+      - Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
 
 	.. note::
 		Whether missing mandatory secondary codes are treated as warnings or errors is controlled by the **Habitat/Secondary Validation** option. See :ref:`options_validation` in the HLU Tool User Guide for details.
+
+.. index::
+	single: Lookup Tables; lut_primary
+
+.. _lut_primary:
+
+**lut_primary**
+
+This table contains all the primary habitat codes that can be assigned to an INCID. The codes that appear in the 'Primary' drop-down list on the 'Habitats' tab are determined by the selected habitat class and type via the ``lut_habitat_type_primary`` cross-reference table.
+
+.. list-table:: lut_primary fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 15 50
+
+    * - column
+      - description
+    * - code
+      - A unique identifier for each primary habitat code. Stored in ``habitat_primary`` in the ``incid`` table.
+    * - description
+      - A brief description that will appear in the 'Primary' drop-down list on the 'Habitats' tab.
+    * - category
+      - Foreign key to ``code`` in the ``lut_primary_category`` table. Only primary codes whose category has ``is_local`` set to True are included in drop-down lists.
+    * - habitat_class_code
+      - Foreign key to ``code`` in the ``lut_habitat_class`` table. Used by the tool to derive the habitat class and version for a given primary code.
+    * - nvc_codes
+      - [Optional]. A comma-separated list of NVC codes associated with this primary habitat code. Displayed read-only in the 'NVC Codes' field on the 'Habitats' tab when this primary code is selected.
+    * - polygon
+      - Set to 'True' (minus 1) if the primary habitat code is valid for polygon features.
+    * - line
+      - Set to 'True' (minus 1) if the primary habitat code is valid for line features.
+    * - point
+      - Set to 'True' (minus 1) if the primary habitat code is valid for point features.
+    * - comments
+      - Any user comments relating to the cross-referencing.
+    * - is_local
+      - Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
+    * - sort_order
+      - Determines the order primary codes are displayed within the 'Primary' drop-down list.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
+
+.. index::
+	single: Lookup Tables; lut_primary_category
+
+.. _lut_primary_category:
+
+**lut_primary_category**
+
+This table groups primary habitat codes into categories. The ``is_local`` flag on this table acts as a high-level filter - only primary codes whose category is marked as local will appear in drop-down lists, regardless of the ``is_local`` flag on ``lut_primary`` itself.
+
+.. list-table:: lut_primary_category fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 12 50
+
+    * - column
+      - description
+    * - code
+      - A unique identifier for each category. Referenced by ``category`` in ``lut_primary``.
+    * - description
+      - A brief description of the category.
+    * - is_local
+      - Set to 'True' (minus 1) to allow primary codes in this category to appear in drop-down lists, or 'False' (zero) to suppress them all.
+    * - sort_order
+      - Not used. This attribute may be removed in a future update.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
 
 .. index::
 	single: Lookup Tables; lut_primary_secondary
 
 .. _lut_primary_secondary:
 
-lut_primary_secondary
----------------------
+**lut_primary_secondary**
 
-This junction table maps primary habitat codes to their valid secondary habitat codes. When the **Primary/Secondary Validation** option is active, only secondary codes present in this table for the selected primary habitat will appear in the 'Code' drop-down list on the Habitats tab.
+This cross-reference table maps primary habitat codes to their valid secondary habitat codes. When the **Primary/Secondary Validation** option is active, only secondary codes present in this table for the selected primary habitat will appear in the 'Code' drop-down list on the 'Habitats' tab.
 
-	code_primary
-		Foreign key to ``code`` in the ``lut_primary`` table.
+.. list-table:: lut_primary_secondary fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 12 50
 
-	code_secondary
-		Foreign key to ``code`` in the ``lut_secondary`` table.
+    * - column
+      - description
+    * - code_primary
+      - Foreign key to ``code`` in the ``lut_primary`` table.
+    * - code_secondary
+      - Foreign key to ``code`` in the ``lut_secondary`` table.
+    * - comments
+      - Any user comments relating to the cross-referencing.
+    * - is_local
+      - Set to 'True' (minus 1) to allow this secondary code to be valid for this primary habitat code and all sub-habitat codes.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
 
 	.. note::
 		Whether this table is used to restrict secondary code choices is controlled by the **Primary/Secondary Validation** option. See :ref:`options_validation` in the HLU Tool User Guide for details.
 
+.. index::
+	single: Lookup Tables; lut_secondary
+
+.. _lut_secondary:
+
+**lut_secondary**
+
+This table contains all the secondary habitat codes that can be assigned to an INCID alongside a primary habitat code. The codes that appear in the 'Code' drop-down list on the 'Habitats' tab are filtered by the selected secondary group and, when validation is active, by the selected primary habitat via the ``lut_primary_secondary`` cross-reference table.
+
+.. list-table:: lut_secondary fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 12 50
+
+    * - column
+      - description
+    * - code
+      - A unique identifier for each secondary habitat code. Stored in ``secondary_habitat`` in the ``incid_secondary`` table.
+    * - description
+      - A brief description that will appear in the 'Code' drop-down list on the 'Habitats' tab.
+    * - code_group
+      - Foreign key to ``code`` in the ``lut_secondary_group`` table. Determines which group this secondary code belongs to.
+    * - is_local
+      - Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
+    * - sort_order
+      - Determines the order secondary codes are displayed in the 'Code' drop-down list. Codes with a sort_order value below 100 are treated as 'essential' codes and are accessible via the **<All Essentials>** group option in the 'Group' drop-down list.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
+
+.. index::
+	single: Lookup Tables; lut_secondary_group
+
+.. _lut_secondary_group:
+
+**lut_secondary_group**
+
+This table groups secondary habitat codes into named categories, which appear in the 'Group' drop-down list on the 'Habitats' tab to help users narrow down secondary code choices.
+
+.. list-table:: lut_secondary_group fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 12 50
+
+    * - column
+      - description
+    * - code
+      - A unique identifier for each secondary group. Referenced by ``code_group`` in ``lut_secondary``. Also stored in ``secondary_group`` in the ``incid_secondary`` table.
+    * - description
+      - A brief description or name that will appear in the 'Group' drop-down list on the 'Habitats' tab.
+    * - is_local
+      - Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
+    * - sort_order
+      - Determines the order secondary groups are displayed in the 'Group' drop-down list on the 'Habitats' tab.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
+
+.. raw:: latex
+
+	\newpage
+
+.. index::
+	single: Lookup Tables; User
+
+.. _lookup_tables_user:
+
+User lookup tables
+------------------
+
+These tables contain records that are specific to all users of a given HLU Tool installation. They can be completely configured for a given HLU Tool installation to tailor them to the specific requirements of each organisation.
+
+The following lookup tables can be updated to tailor local requirements:
+
+	* lut_legacy_habitat
+	* lut_osmm_habitat_xref
+	* lut_process
+	* lut_sources
+	* lut_user
+
+.. seealso::
+	See :ref:`configuring_luts` for more information on configuring lookup tables.
+
+.. index::
+	single: Lookup Tables; lut_legacy_habitat
+
+.. _lut_legacy_habitat:
+
+**lut_legacy_habitat**
+
+This table contains all of the legacy habitats that can be referenced by an INCID. The codes appear in the 'Legacy Habitat' drop-down list on the 'Habitats' tab.
+
+.. list-table:: lut_legacy_habitat fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 12 50
+
+    * - column
+      - description
+    * - code
+      - A unique 50 character field for each legacy habitat.
+    * - description
+      - A brief description or name that will appear in the 'Legacy Habitat' drop-down list in the main window.
+    * - sort_order
+      - Determines the order legacy habitats are displayed in the 'Legacy Habitat' drop-down list in the main window.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
+
+.. seealso::
+	See :ref:`configuring_legacy_habitats` for more information.
+
+.. index::
+	single: Lookup Tables; lut_osmm_habitat_xref
+
+.. _lut_osmm_habitat_xref:
+
+**lut_osmm_habitat_xref**
+
+This table contains a cross-reference between OS MasterMap feature types and the primary and secondary habitat codes. It is used when reviewing and bulk applying proposed OSMM Updates and when bulk loading OSMM features.
+
+.. list-table:: lut_osmm_habitat_xref fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 12 50
+
+    * - column
+      - description
+    * - osmm_xref_id
+      - A unique ID for each cross-reference. This field is referenced by the incid_osmm_update table.
+    * - make
+      - An OS MasterMap attribute. Where known it indicates whether the real-world nature of the feature is man-made, natural or both (multiple), otherwise the value is unclassified or unknown.
+    * - desc_group
+      - An OS MasterMap attribute. The primary classification of a feature assigned to one or more groups, most of which are categories of real-world topographic objects, such as path, building or natural environment.
+    * - desc_term
+      - An OS MasterMap attribute. If present gives further classification information about a feature typically specifying the natural land cover types present.
+    * - theme
+      - An OS MasterMap attribute. The theme(s) that the feature belongs to.
+    * - feat_code
+      - An OS MasterMap attribute. A numerical feature code (a five-digit integer) assigned to each feature.
+    * - ihs_summary
+      - The consolidated summary of the IHS habitat and multiplex codes. This is no longer used in the HLU Tool, but is retained for reference.
+    * - habitat_primary
+      - The primary habitat code that is associated with the OS MasterMap feature.
+    * - habitat_secondaries
+      - The secondary habitat codes that are associated with the OS MasterMap feature.
+    * - manmade
+      - Indicates if the OS MasterMap feature is considered man-made or not. The classification 'man-made' may also include natural features where OS MasterMap is always considered to be accurate (such as rivers, lakes, ponds, road/rail verges, etc.)
+    * - comments
+      - Any user comments relating to the cross-referencing.
+    * - is_local
+      - Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
+
+.. index::
+	single: Lookup Tables; lut_process
+
+.. _lut_process:
+
+**lut_process**
+
+This table contains details of all the processes that can be referenced as the activity being undertaken when applying updates with the HLU Tool.
+
+.. list-table:: lut_process fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 12 50
+
+    * - column
+      - description
+    * - code
+      - A unique 3 character field for each source.
+    * - description
+      - A brief description or name that will appear in the 'Process' drop-down list in the ribbon.
+    * - sort_order
+      - Determines the order processes are displayed in the 'Process' drop-down list in the ribbon.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
+
+.. index::
+	single: Lookup Tables; lut_sources
+
+.. _lut_sources:
+
+**lut_sources**
+
+This table contains details of all the source datasets that can be referenced as a 'Source' by an INCID. New sources can be added to this table to allow them to be selected in the 'Sources' tab of the dockpane. See :ref:`lut_sources` for more details.
+
+.. list-table:: lut_sources fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 12 50
+
+    * - column
+      - description
+    * - source_id
+      - A unique ID for each source.
+    * - source_name
+      - The name which appears in the 'Name' drop-down list in the 'Sources' tab.
+    * - source_date_default
+      - [Optional]. If a date is entered, the 'Vague Date' field in the 'Sources' tab will be set to this value (if blank) when this source is selected. If the date is left blank, the 'Vague Date' field will not be altered.
+    * - sort_order
+      - Determines the order source names are displayed in the 'Name' drop-down list in the 'Sources' tab.
+    * - added_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that added this record to the database.
+    * - added_date
+      - The date and time that this record was added to the database.
+    * - modified_by
+      - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified this record in the database.
+    * - modified_date
+      - The date and time that this record was last modified in the database.
+    * - system_supplied
+      - Set to 'True' (minus 1) if this record was supplied by the system, or 'False' (zero) if it was added by a user.
+    * - custodian
+      - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
+
+.. note::
+	Old sources cannot be removed if they are already referenced by an INCID. Instead, the source name should be prefixed with '[Inactive] - ' and the sort_order changed to 999 so that it is less likely to be selected in the 'Sources' tab.
+
+.. index::
+	single: Lookup Tables; lut_users
+
+.. _lut_users:
+
+**lut_users**
+
+This table contains details of all the users that have editing capability with the HLU Tool and indicates if they are also able to perform 'bulk' updates.
+
+.. list-table:: lut_users fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 10 50
+
+    * - column
+      - description
+    * - user_id
+      - The user's *Windows* login ID. If the user logs in to a domain then the login should be entered in the format: *[Domain]\\[LoginID]*. [1]_
+    * - user_name
+      - The name which will be displayed in the 'By' fields of the INCID section and the History tab.
+    * - bulk_update
+      - Determines whether the user has permissions to run a bulk update to change attributes for all selected records. Ticking this checkbox gives the user permission to run bulk updates.
+    * - sort_order
+      - Not used. This attribute may be removed in a future update.
+
+	.. caution::
+		Bulk update permission should only be assigned to **expert** users and should only be used with caution as mistakes can have major affects on the data.
+
+.. [1] The 'user_id' of the current user is shown in the **About** window, accessible from the HLU Tool ribbon.
 
 .. index::
 	single: Lookup Tables; Sort Order
@@ -1244,96 +1613,15 @@ This junction table maps primary habitat codes to their valid secondary habitat 
 Local Flags & Sort Orders
 -------------------------
 
-Regardless of whether records in a lookup table are 'system' supplied records or not, many can be configured to indicate if they are applicable to an organisation. For example, many lookup tables contain a **sort_order** field that will determine the order that the values appear in any related drop-down lists. Some tables also have a **is_local** field that can be used to 'hide' values that are not applicable to the local area or should not be used by the organisation.
+Records in all lookup tables that are not 'system' tables, i.e. 'local' and 'user' tables, can be configured to indicate if they are applicable to an organisation. For example, all have an **is_local** field that can be used to 'hide' values that are not applicable to the local area or should not be used by the organisation. And many lookup tables also contain a **sort_order** field, that will determine the order that the values appear in any related drop-down lists, which can also be changed.
 
-	is_local
-		Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude from drop-down lists.
+is_local
+	Set to 'True' (minus 1) to include in drop-down lists, or 'False' (zero) to exclude from drop-down lists.
 
-	sort_order
-		Set to a sequential, positive numeric whole number to indicate the order records should appear in drop-down lists. Alternatively all records can be set to zero to use the default sort order for that table.
+sort_order
+	Set to a sequential, positive numeric whole number to indicate the order records should appear in drop-down lists. Alternatively all records can be set to zero to use the default sort order for that table.
 
-	.. note::
-
-		* Changes to the lookup tables won't take effect for HLU Tool instances that are running. The HLU Tool will need to be closed and re-started before any lookup table changes to take effect.
-		* Lookup table values are relevant to the **whole** database system and hence any changes will affect **all** users of that database.
-		* **All** records in tables containing a 'sort_order' attribute must have a numerical value set or they may not appear in the relevant drop-down lists.
-
-The following lookup tables can be updated to tailor their **is_local** and/or **sort_order** values:
-
-	lut_ihs_habitat
-		Contains all the IHS Habitats that can be assigned to INCIDs using the 'Habitat' field on the Habitats tab of the dockpane.
-
-	lut_habitat_class
-		Contains all of the Habitat Classifications that appear in the 'Class' drop-down list on the Habitats tab and the 'Habitat Class' drop-down list on the Sources tab. See :ref:`lut_habitat_class` for more details.
-
-	lut_habitat_type
-		Contains all of the Habitat Types that appear in the 'Type' drop-down list on the Habitats tab (for the selected 'Class') and the 'Habitat Type' drop-down list on the Sources tab. See :ref:`lut_habitat_type` for more details.
-
-	lut_habitat_type_primary
-		Contains the junction records that map habitat types to their valid and preferred primary habitat codes, and their suggested secondary codes and habitat tips. **[sort_order only]**
-
-	lut_habitat_type_secondary
-		Contains the junction records that map habitat types to their mandatory and optional secondary habitat codes. **[is_local not applicable]**
-
-	lut_ihs_complex
-		Contains all the IHS Complex codes that can be assigned using the 'Complex' fields on the Habitats tab of the dockpane. **[sort_order only]**
-
-	lut_ihs_formation
-		Contains all the IHS Formation codes that can be assigned using the 'Formation' fields on the Habitats tab of the dockpane. **[sort_order only]**
-
-	lut_ihs_management
-		Contains all the IHS Management codes that can be assigned using the 'Management' fields on the Habitats tab of the dockpane. **[sort_order only]**
-
-	lut_ihs_matrix
-		Contains all the IHS Matrix codes that can be assigned using the 'Matrix' fields on the Habitats tab of the dockpane. **[sort_order only]**
-
-	lut_bap_quality_determination
-		Contains the BAP determination quality types that can be assigned to Priority Habitats and Potential Priority Habitats on the Details tab of the dockpane. **[sort_order only]**
-
-	lut_bap_quality_interpretation
-		Contains the BAP interpretation quality types that can be assigned to Priority Habitats and Potential Priority Habitats on the Details tab of the dockpane. **[sort_order only]**
-
-	lut_boundary_map
-		Contains the list of map types that can be assigned to the 'Boundary Map' and 'Digitisation Map' fields on the Details tab of the dockpane. **[sort_order only]**
-
-	lut_importance
-		Contains the difference levels of Importance that can be assigned to Sources using the 'Boundary Imp.' and 'Habitat Imp.' fields on the Sources tab of the dockpane. **[sort_order only]**
-
-	lut_legacy_habitat
-		Contains the list of legacy habitats that can be assigned to the 'Legacy Habitat' field on the Habitats tab of the dockpane. **[sort_order only]**
-
-	lut_osmm_ihs_xref
-		Contains a cross-reference between all the OS MasterMap feature types and the IHS habitat and multiplex codes. **[is_local only]**
-
-	lut_primary
-		Contains all the UKHab primary habitat codes that can be assigned to INCIDs. See :ref:`lut_primary` for more details.
-
-	lut_primary_category
-		Contains the categories used to group primary habitat codes. The ``is_local`` flag on this table suppresses all primary codes in a category from appearing in drop-down lists.
-
-	lut_primary_secondary
-		Contains the junction records that map primary habitat codes to their valid secondary habitat codes. Used when Primary/Secondary Validation is active. **[is_local not applicable]**
-
-	lut_process
-		Contains details of all the processes that can be referenced in the 'Process' field on the HLU Tool ribbon to indicate the activity being undertaken when using the HLU Tool. See :ref:`lut_process` for more details. **[sort_order only]**
-
-	lut_reason
-		Contains details of all the reasons that can be referenced in the 'Reason' field on the HLU Tool ribbon to indicate the activity being undertaken when using the HLU Tool. See :ref:`lut_reason` for more details. **[sort_order only]**
-
-	lut_sources
-		Contains details of all the source datasets that can be referenced as a 'Source' on the Sources tab of the dockpane. See :ref:`lut_sources` for more details. **[sort_order only]**
-
-	lut_secondary
-		Contains all the UKHab secondary habitat codes that can be assigned to INCIDs. See :ref:`lut_secondary` for more details.
-
-	lut_secondary_group
-		Contains the groups used to categorise secondary habitat codes in the 'Group' drop-down list on the Habitats tab. See :ref:`lut_secondary_group` for more details.
-
-	lut_user
-		Contains details of all the users that have editing capability with the HLU Tool and indicates if they are also able to perform 'bulk' updates. See :ref:`lut_users` for more details. **[sort_order only]**
-
-
-.. seealso:
+.. seealso::
 	See :Ref:`configuring_luts` for more information on configuring lookup tables.
 
 .. raw:: latex
@@ -1347,9 +1635,14 @@ Export Tables
 
 Tables in the database prefixed by 'export' are **export** tables and are used to define different formats that can be used to export data from the HLU Tool database and GIS layers to a new 'standalone' GIS layer.
 
+**Key to Export Tables**
+
+1. exports
+2. exports_fields
+3. export_field_types
+
 .. seealso::
 	See :ref:`configuring_exports` for more information.
-
 
 .. index::
 	single: Export Tables; exports
@@ -1359,15 +1652,22 @@ Tables in the database prefixed by 'export' are **export** tables and are used t
 exports
 -------
 
-This table lists all the export 'formats' that can be used when exporting data.
+This table defines all of the export 'formats' that can be used when exporting data.
 
-	export_id
-		A unique identifier used to determines which fields are selected from the ``exports_fields`` table.
+.. list-table:: exports fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 10 50
 
-	export_name
-		The name which will be displayed in the 'Export Format' drop-down list.
+    * - column
+      - description
+    * - export_id
+      - A unique identifier used to determines which fields are selected from the ``exports_fields`` table.
+    * - export_name
+      - The name which will be displayed in the 'Export Format' drop-down list.
 
-Once a new export format has been added to the ``exports`` table the fields to be included in the export must be added to the ``exports_fields`` table.
+.. note::
+	Once a new export format has been added to the ``exports`` table the fields to be included in the export must also be added to the ``exports_fields`` table.
 
 .. index::
 	single: Export Tables; exports_fields
@@ -1377,75 +1677,96 @@ Once a new export format has been added to the ``exports`` table the fields to b
 exports_fields
 --------------
 
-.. sidebar:: Excluded Fields
-
-	* GIS controlled fields such as obj, shape, perimeter, area, x, y, etc. should not be included. These fields will be automatically added to the exported layer.
-	* Fields already in the active GIS layer (e.g. toid, toid_fragment_id, ihs_category, ihs_summary) are automatically included in the exported layer and hence should not be added to the exports_fields table.
-
 This table defines which fields are to be exported for each export format in the ``exports`` table. It also defines what the export fields will be called, the order they will appear in the new GIS layer and the number of occurrences of each field (where fields can appear in multiple table records.)
 
-	export_field_id
-		A unique identifier for the field.
+.. list-table:: exports_fields fields
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 15 50
 
-	export_id
-		The unique identifier for the export type in the ``exports`` table (see :ref:`exports`).
+    * - column
+      - description
+    * - export_field_id
+      - A unique identifier for the field.
+    * - export_id
+      - The unique identifier for the export type in the ``exports`` table (see :ref:`exports`).
+    * - table_name
+      - The name of the source table in the database containing the column to be exported.
+    * - column_name
+      - The name of the column within the source table.
+    * - column_ordinal
+      - The number of the column within the source table starting from 1. The export process does not require this column to be completed.
+    * - field_name
+      - The name of the column in the exported GIS layer. The 'field_name' must be a valid ArcGIS/MapInfo column name (i.e. containing no spaces or special characters.)
+    * - field_ordinal
+      - Sets the order of the fields in the exported GIS layer.
+    * - field_count
+      - Allows users to set the maximum number of child records to be exported. Fields from the incid table do not support field_count values as there is only ever one incid record for an incid.
+    * - field_type
+      - Allows users to set the data type of the field to be exported. See :ref:`export_field_types` for more details on which export types can be used.
+    * - field_length
+      - Allows users to set the maximum length of text fields. Text input values longer than this length will be truncated during the export without warning.
+    * - field_format
+      - Allows users to determine the format of the exported field. See :ref:`export_field_formats` for more details on which export fields can be formatted and how to format them.
 
-	table_name
-		The name of the source table in the database containing the column to be exported.
+.. caution::
+	When exporting to an ArcGIS Pro shapefile field names must be less than 10 characters or they will be truncated or renamed by ArcGIS Pro.
 
-	column_name
-		The name of the column within the source table.
+.. note::
+	GIS controlled fields such as obj, shape, perimeter, area, x, y, etc. should be excluded as export fields. These fields will be automatically included in the exported layer when required.
 
-	column_ordinal
-		The number of the column within the source table starting from 1. The export function does not require this column to be completed.
+.. index::
+	single: Export Tables; export_field_types
 
-	field_name
-		The name of the column in the exported GIS layer. The 'field_name' must be a valid ArcGIS/MapInfo column name (i.e. containing no spaces or special characters.)
+.. _export_field_types:
 
-	.. caution::
-		When exporting to an ArcGIS Pro shapefile field names must be less than 10 characters or they will be truncated or renamed by ArcGIS Pro.
+export_field_types
+------------------
 
-	field_ordinal
-		Sets the order of the fields in the exported GIS layer.
+This table lists the field types that can be defined in the ``export_fields`` table.
 
-	field_count
-		Allows users to set the number of child records to be exported. Fields from the incid table do not support field_count values as there is only ever one incid record for an incid.
+.. tabularcolumns:: |C|L|L|
 
-	field_type
-		Allows users to set the data type of the field to be exported.
+.. table:: Valid Export Field Types
 
-		.. tabularcolumns:: |C|L|L|
+	+------------+-------------------+------------------------------------------------------------+
+	| Field Type | Field Description |                          Comment                           |
+	+============+===================+============================================================+
+	|          3 | Integer           | Standard number with no decimal places.                    |
+	+------------+-------------------+------------------------------------------------------------+
+	|          6 | Single            | Short number with decimal places.                          |
+	+------------+-------------------+------------------------------------------------------------+
+	|          7 | Double            | Long number with decimal places.                           |
+	+------------+-------------------+------------------------------------------------------------+
+	|          8 | Date/Time         | Date and Time stamp.                                       |
+	+------------+-------------------+------------------------------------------------------------+
+	|         10 | Text              | Text field up to 254 characters long.                      |
+	+------------+-------------------+------------------------------------------------------------+
+	|         99 | AutoNumber        | Integer field that automatically increments with each row. |
+	+------------+-------------------+------------------------------------------------------------+
 
-		.. table:: Valid Export Field Types
-
-			+------------+-------------------+------------------------------------------------------------+
-			| Field Type | Field Description |                          Comment                           |
-			+============+===================+============================================================+
-			|          3 | Integer           | Standard number with no decimal places.                    |
-			+------------+-------------------+------------------------------------------------------------+
-			|          6 | Single            | Short number with decimal places.                          |
-			+------------+-------------------+------------------------------------------------------------+
-			|          7 | Double            | Long number with decimal places.                           |
-			+------------+-------------------+------------------------------------------------------------+
-			|          8 | Date/Time         | Date and Time stamp.                                       |
-			+------------+-------------------+------------------------------------------------------------+
-			|         10 | Text              | Text field up to 254 characters long.                      |
-			+------------+-------------------+------------------------------------------------------------+
-			|         99 | AutoNumber        | Integer field that automatically increments with each row. |
-			+------------+-------------------+------------------------------------------------------------+
-
-	field_length
-		Allows users to set the maximum length of text fields. Text input values longer than this length will be truncated during the export without warning.
-
-		.. note::
-			field_length is only used where the field_type is '10' (text), otherwise it is ignored.
-
-	field_format
-		Allows users to determine the format of the exported field. See :ref:`export_field_formats` for more details on which export fields can be formatted and how to format them.
+.. note::
+	field_length is only used where the field_type is '10' (text), otherwise it is ignored.
 
 .. raw:: latex
 
 	\newpage
+
+.. index::
+	single: Conversion Tables
+
+.. _conversion_tables:
+
+Conversion Tables
+=================
+
+There are 3 tables in the database that relate to the IHS to UKHab conversion process. These are not used by the HLU Tool and are not described in this guide, but are included here for completeness and for reference.
+
+**Key to Conversion Tables**
+
+1. incid_ihs_conversion
+2. incid_ihs_conversion_error
+3. lut_ihs_primary_secondary
 
 .. index::
 	single: Data Tables; Relationships
@@ -1455,7 +1776,7 @@ This table defines which fields are to be exported for each export format in the
 Table Relationships
 ===================
 
-There are 53 tables in the HLU Tool relational database comprised of data tables, lookup tables and export tables. The relationships between the tables are too numerous and complex to display in a single diagram so the tables and relationships have therefore been separated into 7 logical groups, some of which connect and overlap with one another.
+There are 53 tables in the HLU Tool relational database comprised of data tables, lookup tables and export tables. The relationships between the tables are too numerous and complex to display in a single diagram so the tables and relationships have therefore been separated into logical groups, some of which connect and overlap with one another.
 
 .. tip::
 	Bespoke relationship diagrams between the various HLU Tool tables can be created using SQL Server Management Studio.
@@ -1479,21 +1800,6 @@ Data Tables
 
 	\newpage
 
-IHS Lookup Tables
------------------
-
-.. _figDDILT:
-
-.. figure:: ../diagrams/DatabaseDiagramIHSLookupTables.png
-	:align: center
-	:scale: 80
-
-	Database Relationships - IHS Lookup Tables
-
-.. raw:: latex
-
-	\newpage
-
 Priority Habitat Tables
 -----------------------
 
@@ -1501,7 +1807,7 @@ Priority Habitat Tables
 
 .. figure:: ../diagrams/DatabaseDiagramBAPHabitatTables.png
 	:align: center
-	:scale: 70
+	:scale: 85
 
 	Database Relationships - Priority Habitat Tables
 
@@ -1539,44 +1845,6 @@ Habitat Type Tables
 
 	\newpage
 
-Habitat Classification Tables
------------------------------
-
-.. _figDDHaCT:
-
-.. figure:: ../diagrams/DatabaseDiagramHabitatClassificationTables.png
-	:align: center
-	:scale: 85
-
-	Database Relationships - Habitat Classification Tables
-
-The following diagram summarises the key relationships between the habitat classification lookup tables and the data tables that store the selected codes:
-
-.. code-block:: none
-
-	lut_habitat_class ???????????????????????????????????????????
-		  ? (1:N via habitat_class_code)                        ?
-	lut_habitat_type                                      lut_primary
-		  ?                                                     ?
-		  ? (N:M via lut_habitat_type_primary)                  ?
-		  ???????????????????????????????????????????????????????
-		  ?   preferred, habitat_secondaries, comments
-		  ?
-		  ? (N:M via lut_habitat_type_secondary)
-		  ????????????????????? lut_secondary
-		  ?   mandatory               ? (N:1 via code_group)
-		  ?                    lut_secondary_group
-		  ? (N:M via lut_primary_secondary)
-		  ????????????????????? lut_secondary
-
-	incid.habitat_primary ??????????????????? lut_primary
-	incid_secondary.secondary_habitat ??????? lut_secondary
-	incid_secondary.secondary_group ????????? lut_secondary_group
-
-.. raw:: latex
-
-	\newpage
-
 Sources Tables
 --------------
 
@@ -1584,9 +1852,24 @@ Sources Tables
 
 .. figure:: ../diagrams/DatabaseDiagramSourcesTables.png
 	:align: center
-	:scale: 90
+	:scale: 85
 
 	Database Relationships - Sources Tables
+
+.. raw:: latex
+
+	\newpage
+
+Condition Tables
+----------------
+
+.. _figDDCT:
+
+.. figure:: ../diagrams/DatabaseDiagramConditionTables.png
+	:align: center
+	:scale: 85
+
+	Database Relationships - Condition Tables
 
 .. raw:: latex
 
@@ -1599,7 +1882,7 @@ History Tables
 
 .. figure:: ../diagrams/DatabaseDiagramHistoryTables.png
 	:align: center
-	:scale: 90
+	:scale: 85
 
 	Database Relationships - History Tables
 
@@ -1632,19 +1915,3 @@ Other Tables
 	:scale: 85
 
 	Database Relationships - Other Tables
-
-.. index::
-	single: Conversion Tables
-
-.. _conversion_tables:
-
-Conversion Tables
-=================
-
-There are 3 tables in the database that relate to the IHS to UKHab conversion process. These are not used by the HLU Tool and are not described in this guide, but are included here for completeness and for reference.
-
-.. sidebar:: Key to Conversion Tables
-
-	1. incid_ihs_conversion
-	2. incid_ihs_conversion_error
-	3. lut_ihs_primary_secondary

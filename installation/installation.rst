@@ -20,18 +20,17 @@ Hardware
 **Minimum specification:**
 
 	* 3 GHz processor
-	* 4 GB RAM
+	* 8 GB RAM
 	* 1 GB available hard disk space
 
 **Recommended specification:**
 
 	* 3 GHz Dual Core PC or better
-	* 8 GB RAM
+	* 16 GB RAM
 	* 5 GB available hard disk space
 
 .. Tip::
 	For increased performance a multiple core PC with as much RAM as possible is recommended.
-
 
 Software
 --------
@@ -50,14 +49,12 @@ Software
 .. note::
 	Microsoft Access is **not** supported as a backend database by this edition of the HLU Tool. For Access-backed installations please use the `ArcGIS Desktop / MapInfo edition <https://github.com/HabitatFramework/HLUTool/releases>`_.
 
-
 .. _latest_release:
 
 Latest Release
 ==============
 
 The latest release of the add-in can be downloaded from `GitHub <https://github.com/HabitatFramework/HLUTool-ArcPro/releases>`_. A single :file:`.esriAddinX` file is provided — one version supports all compatible ArcGIS Pro installations.
-
 
 .. raw:: latex
 
@@ -98,4 +95,3 @@ To remove the add-in:
 	2. Select the **HLU Tool** add-in from the list.
 	3. Click :guilabel:`Delete This Add-In` and confirm when prompted.
 	4. Restart ArcGIS Pro.
-

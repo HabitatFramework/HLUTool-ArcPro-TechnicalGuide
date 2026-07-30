@@ -7,6 +7,8 @@ Database Updater
 
 In order to apply structural and data changes to the HLU tool database you will need to use the HLU Tool Database Updater **HLUDbUpdater.exe**. The HLU Tool Database Updater provides an automated mechanism of applying changes to a target HLU Tool relational database. It will process one or more script files and execute all the SQL commands in the files.
 
+.. note::
+	No changes to the this program have been necessary to support the ArcGIS Pro edition of the HLU Tool.
 
 .. _database_updater_source_code:
 
@@ -23,7 +25,6 @@ In order to apply structural and data changes to the HLU tool database you will 
 **Latest Scripts**
 	The latest scripts for this program can be downloaded from <https://github.com/HabitatFramework/HLUTool-DatabaseUpdater/archive/scripts.zip>.
 
-
 .. index::
 	single: Database Updater; Requirements
 
@@ -35,15 +36,13 @@ The HLU Tool Database Updater requires the following to operate:
 **Hardware**
 
 	* 2 GHz or higher processor
-	* 2 GB RAM
+	* 4 GB RAM
 	* 10 MB of free hard disk space
-
 
 **Software**
 
 	* Microsoft Windows 10 or Windows 11
 	* Microsoft .NET 8 runtime or later
-
 
 .. index::
 	single: Database Updater; Instructions
@@ -68,7 +67,6 @@ To run the program:
 	* Click :guilabel:`Proceed` to process the script files found in the 'Scripts' folder.
 	* Progress bars and a text window will show the progress and success of the processing.
 	* Click :guilabel:`Close` once all scripts have been processed.
-	
+
 .. tip::
 	If you have more than one target HLU tool database, copy the script files from the 'Scripts/Archive' folder back into the'Scripts' folder and run the program again - connecting to the next database to be updated.
-

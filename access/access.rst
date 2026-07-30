@@ -2,16 +2,15 @@
 Linking Access to SQL Server
 ****************************
 
-.. note::
-	Microsoft Access is **not** supported as a direct backend database connection in the ArcGIS Pro edition of the HLU Tool. The instructions in this section describe how to link a Microsoft Access database as an **administrative front-end** to a SQL Server database, allowing users familiar with Access to view and edit the HLU Tool lookup tables and data tables without requiring SQL Server Management Studio.
+Microsoft Access is **not** supported as a direct backend database connection in the ArcGIS Pro edition of the HLU Tool. Using SQL Server as the relational database system for the HLU Tool will provide performance, reliability and volume benefits over Microsoft Access.
 
-Using SQL Server as the relational database system for the HLU Tool will provide performance, reliability and volume benefits over Microsoft Access.
-
-Many users will be more familiar with Access, so linking Access to SQL Server in this way allows users to view and edit the HLU Tool data without needing authority to use SSMS and without any risk of altering the database structure or settings. Using Access as a front-end to the database in this way also allows users to create and share Access queries, forms and reports specific to their needs.
+The instructions in this section describe how to link a Microsoft Access database as an **administrative front-end** to a SQL Server database, allowing users familiar with Access to view and edit the HLU Tool lookup tables and data tables without requiring SQL Server Management Studio and without any risk of altering the database structure or settings. Using Access as a front-end to the database in this way also allows users to create and share Access queries, forms and reports specific to their needs.
 
 .. note::
 	Database administrators need to ensure that users of the Access database have the necessary permissions to view and edit the data tables on the target SQL Server database.
 
+.. note::
+	The steps in this guide are based on using Microsoft Access 2012. Instructions for different versions of Microsoft Access may vary.
 
 .. raw:: latex
 
@@ -49,7 +48,6 @@ The following instructions describe how to link an Access database to a SQL Serv
 			:scale: 90
 
 			External Data tab
-
 
 	.. raw:: latex
 
@@ -117,7 +115,6 @@ The following instructions describe how to link an Access database to a SQL Serv
 
 			Access Objects Navigation Pane
 
-
 .. raw:: latex
 
 	\newpage
@@ -153,7 +150,7 @@ The following instructions describe how to create a new .dsn file for the HLU To
 		\newpage
 
 	3. If you wish to enter the 'Server Name' and 'Database Name' at this stage click on :guilabel:`Advanced...` and enter them under the DRIVER keyword (see :ref:`figALADD` for example). Then click :guilabel:`OK` to return to the 'Create New Data Source' wizard.
-	
+
 		.. _figALADD:
 
 		.. figure:: figures/AccessLinkAdvancedDSNDialog.png
@@ -249,11 +246,9 @@ The following instructions describe how to create a new .dsn file for the HLU To
 			Create New Data Source - Summary dialog
 
 	12.	Click :guilabel:`OK` to save the DSN. You will then be returned to the 'Select Data Source' window to continue linking a new database (see :ref:`new_link`).
- 
 
 .. note::
 	Once you have defined a DSN for your HLU Tool database you won't need to repeat steps 6 to 14 if you need to link another Access database in future.
-
 
 .. raw:: latex
 
@@ -269,9 +264,8 @@ Updating a linked table
 
 Each time you open a linked table you will see the latest data displayed in it. However, structural changes made to a SQL Server table are not automatically reflected in a linked table. In this case you will need to update the linked table by applying the latest SQL Server object structure.
 
-.. sidebar:: Other Access versions
-
-	The steps in this procedure are based on using Microsoft Access 2012. Instructions for different versions of Microsoft Access may vary.
+.. note::
+	The steps in this guide are based on using Microsoft Access 2012. Instructions for different versions of Microsoft Access may vary.
 
 The following instructions describe how to update the links from an Access database to a SQL Server database:
 
@@ -325,4 +319,3 @@ The following instructions describe how to update the links from an Access datab
 			Linked Table Manager Success dialog
 
 	8. Click :guilabel:`OK` to close the Linked Table Manager.
-
