@@ -212,7 +212,7 @@ The 'lut_legacy_habitat' table contains all of the legacy habitats that can be r
 	See :ref:`lut_legacy_habitat` for more information on the lut_legacy_habitat table.
 
 .. index::
-	single: Configuration; OSMM to IHS cross-reference
+	single: Configuration; OSMM to habitat cross-reference
 
 .. _configuring_osmm_habitat_xref:
 
@@ -222,7 +222,7 @@ Configuring OSMM to habitat cross-reference
 The 'lut_osmm_habitat_xref' table contains a cross-reference between OS MasterMap feature types and the primary and secondary habitat codes. Each row represents a unique combination of OSMM attributes plus the corrsponding primary and secondary habitat codes. It is used when reviewing and bulk applying proposed OSMM Updates and when bulk loading OSMM features. New entries can be added to this table to allow them to be referenced by upcoming OSMM updates or input source layers containing new OSMM features to be bulk loaded.
 
 .. note::
-	Existing OS MasterMap to IHS cross-reference records cannot be removed from the 'lut_osmm_habitat_xref' table if they are referenced by one or more records in the **incid_osmm_updates** table. This is because data integrity must be retained.
+	Existing OS MasterMap to habitat cross-reference records cannot be removed from the 'lut_osmm_habitat_xref' table if they are referenced by one or more records in the **incid_osmm_updates** table. This is because data integrity must be retained.
 
 .. seealso::
 	See :ref:`lut_osmm_habitat_xref` for more information on the lut_osmm_habitat_xref table.
@@ -246,7 +246,7 @@ sort_order
 	Changing the **sort_order** numeric value will alter the order that Habitat Classes appear in the 'Habitat Class' drop-down list in the Habitats tab of the dockpane and in the 'Habitat Class' drop-down list in the Sources tab.
 
 .. note::
-	Only Habitat Classes that are indirectly referenced by records in the 'lut_habitat_type_ihs_habitat' translation table will appear in the 'Habitat Class' drop-down list in the Habitats tab, even if the **is_local** flag is set to 'True'.
+	Only Habitat Classes that are indirectly referenced by records in the 'lut_habitat_type_primary' translation table will appear in the 'Habitat Class' drop-down list in the Habitats tab, even if the **is_local** flag is set to 'True'.
 
 .. seealso::
 	See :ref:`lut_habitat_class` for more information on the lut_habitat_class table.

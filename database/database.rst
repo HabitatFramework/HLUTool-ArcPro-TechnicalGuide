@@ -144,7 +144,7 @@ This is the main data table with one record per INCID. All the other data tables
       - description
     * - incid
       - Char(12)
-      - A unique **Inc**\ remental **id**\ entifier for each logical group of features.
+      - A unique **INC**\ remental **ID**\ entifier for each logical group of features.
     * - legacy_habitat
       - Char(50)
       - Foreign key to ``code`` in the ``lut_legacy_habitat`` table representing the legacy Habitat for the INCID.
@@ -201,14 +201,15 @@ This is the main data table with one record per INCID. All the other data tables
       - Foreign key to ``user_id`` in the ``lut_user`` table representing the user that last modified the INCID attributes or split or merged the INCID.
 
 .. note::
-	The ihs_habitat and ihs_summary fields are no longer maintained by the tool, but is retained in the database for legacy purposes. However, they may be cleared during updates or bulk updates depending upon the application options.
+	The ihs_habitat and ihs_summary fields are no longer maintained by the tool, but are retained in the database for legacy purposes. However, they may be cleared during updates or bulk updates depending upon the application options.
 
 .. index::
 	single: Data Tables; incid_ihs_matrix
 
 .. _incid_ihs_matrix:
 
-### incid_ihs_matrix
+incid_ihs_matrix
+~~~~~~~~~~~~~~~~
 
 This table contains any IHS Matrix codes recorded alongside an IHS Habitat code to refine the habitat definition for an INCID. There can be between 0 and 3 records for each INCID.
 
@@ -238,7 +239,8 @@ This table contains any IHS Matrix codes recorded alongside an IHS Habitat code 
 
 .. _incid_ihs_formation:
 
-### incid_ihs_formation
+incid_ihs_formation
+~~~~~~~~~~~~~~~~~~~
 
 This table contains any IHS Formation codes recorded alongside an IHS Habitat code to refine the habitat definition for an INCID. There can be between 0 and 2 records for each INCID.
 
@@ -268,7 +270,8 @@ This table contains any IHS Formation codes recorded alongside an IHS Habitat co
 
 .. _incid_ihs_management:
 
-### incid_ihs_management
+incid_ihs_management
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This table contains any IHS Management codes recorded alongside an IHS Habitat code to refine the habitat definition for an INCID. There can be between 0 and 2 records for each INCID.
 
@@ -298,7 +301,8 @@ This table contains any IHS Management codes recorded alongside an IHS Habitat c
 
 .. _incid_ihs_complex:
 
-### incid_ihs_complex
+incid_ihs_complex
+~~~~~~~~~~~~~~~~~
 
 This table contains any IHS Complex codes recorded alongside an IHS Habitat code to refine the habitat definition for an INCID. There can be between 0 and 2 records for each INCID.
 
@@ -328,7 +332,8 @@ This table contains any IHS Complex codes recorded alongside an IHS Habitat code
 
 .. _incid_bap_table:
 
-### incid_bap
+incid_bap
+~~~~~~~~~
 
 This table contains details of the priority habitats and potential priority habitats for an INCID. There can be any number of each for each INCID.
 
@@ -365,7 +370,8 @@ This table contains details of the priority habitats and potential priority habi
 
 .. _incid_condition_table:
 
-### incid_condition
+incid_condition
+~~~~~~~~~~~~~~~
 
 This table contains details of the condition assessments for an INCID. There can be any number of condition assessments for each INCID, but only the most recent assessment will be displayed in the 'Details' tab of the dockpane.
 
@@ -404,7 +410,8 @@ This table contains details of the condition assessments for an INCID. There can
 
 .. _incid_secondary_table:
 
-### incid_secondary
+incid_secondary
+~~~~~~~~~~~~~~~
 
 This table contains any secondary habitat codes recorded alongside the primary habitat code to refine the habitat definition for an INCID. There can be any number of secondary habitat records for each INCID.
 
@@ -434,7 +441,8 @@ This table contains any secondary habitat codes recorded alongside the primary h
 
 .. _incid_sources:
 
-### incid_sources
+incid_sources
+~~~~~~~~~~~~~
 
 This table contains details of the source datasets for an INCID. There can be between 0 and 3 records for each INCID.
 
@@ -475,7 +483,7 @@ This table contains details of the source datasets for an INCID. There can be be
       - Foreign key to ``code`` in the ``lut_important`` table representing the relative importance of the source when determining the boundary location of all the features in the INCID.
     * - source_habitat_importance
       - Char(1)
-      - Foreign key to ``code`` in the ``lut_important`` table representing the relative importance of the source when determining the IHS Habitat and associated multiplex codes of the INCID.
+      - Foreign key to ``code`` in the ``lut_important`` table representing the relative importance of the source when determining the primary and secondary habitats of the INCID.
     * - sort_order
       - Integer
       - Determines the (ascending) order the sources for each INCID will be displayed in the 'Sources' tab of the dockpane.
@@ -527,7 +535,8 @@ This table contains details of the source datasets for an INCID. There can be be
 
 .. _incid_osmm_update_table:
 
-### incid_osmm_update
+incid_osmm_update
+~~~~~~~~~~~~~~~~~
 
 This table contains details of any proposed Ordnance Survey MasterMap (OSMM) updates for an INCID. There will only be OSMM update records if the habitat framework has been externally processed to integrate more recent OSMM data. Any proposed updates based on the new OSMM data will be loaded into this table.
 
@@ -578,7 +587,8 @@ This table contains details of any proposed Ordnance Survey MasterMap (OSMM) upd
 
 .. _history:
 
-### history
+history
+~~~~~~~
 
 This table contains a record of **every** change to **every** feature made using the HLU Tool.
 
@@ -647,7 +657,8 @@ This table contains a record of **every** change to **every** feature made using
 
 .. _incid_mm_polygons:
 
-### incid_mm_polygons
+incid_mm_polygons
+~~~~~~~~~~~~~~~~~
 
 This table is a local database **copy** of the attribute table for the HLU polygon feature layers. It is used to improve performance for the tool. If the HLU polygon features are split into mulitple layers this table contains the attribute records for **all** those layers combined. There can be any number of records for each INCID, depending upon how many INCID fragments are associated with the INCID.
 
@@ -692,7 +703,8 @@ This table is a local database **copy** of the attribute table for the HLU polyg
 
 .. _incid_mm_lines:
 
-### incid_mm_lines
+incid_mm_lines
+~~~~~~~~~~~~~~
 
 This table is a local database **copy** of the attribute table for the HLU polyline feature layers. It is used to improve performance for the tool. It has the same structure as the **incid_mm_polygons** table but is used when the HLU GIS layer contains polyline features instead of polygons.
 
@@ -737,7 +749,8 @@ This table is a local database **copy** of the attribute table for the HLU polyl
 
 .. _incid_mm_points:
 
-### incid_mm_points
+incid_mm_points
+~~~~~~~~~~~~~~~
 
 This table is a local database **copy** of the attribute table for the HLU point feature layers. It is used to improve performance for the tool. It has the same structure as the **incid_mm_polygons** table but is used when the HLU GIS layer contains point features instead of polygons.
 
@@ -949,7 +962,8 @@ These tables also contain records and settings that are generic to all HLU Tool 
 
 .. _lut_condition:
 
-### lut_condition
+lut_condition
+~~~~~~~~~~~~~
 
 This table contains details of all the condition assessment levels (e.g. Good, Fairly Good, Moderate, etc.) that can be referenced by an INCID. The codes appear in the 'Condition' drop-down list on the 'Details' tab.
 
@@ -986,7 +1000,8 @@ This table contains details of all the condition assessment levels (e.g. Good, F
 
 .. _lut_condition_qualifier:
 
-### lut_condition_qualifier
+lut_condition_qualifier
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This table contains all of the condition assessment methods (e.g. Defra metric assessment, Rapid assessment, etc.) that can be used to qualify the condition of the habitat. The codes appear in the 'Condition Qualifier' drop-down list on the 'Details' tab.
 
@@ -1023,14 +1038,15 @@ This table contains all of the condition assessment methods (e.g. Defra metric a
 
 .. _lut_habitat_class:
 
-### lut_habitat_class
+lut_habitat_class
+~~~~~~~~~~~~~~~~~
 
 This table contains all of the habitat classification systems (e.g. UKHab, Phase 1, IHS, NVC) that appear in the 'Class' drop-down list on the 'Habitats' tab and the 'Habitat Class' drop-down list on the 'Sources' tab. It is used to filter the primary habitat code selection on the 'Habitats' tab of the dockpane. See :ref:`configuring_habitat_class` for more details.
 
 .. list-table:: lut_habitat_class fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 15 50
+    :widths: 12 50
 
     * - column
       - description
@@ -1062,14 +1078,15 @@ This table contains all of the habitat classification systems (e.g. UKHab, Phase
 
 .. _lut_habitat_type:
 
-### lut_habitat_type
+lut_habitat_type
+~~~~~~~~~~~~~~~~
 
 This table contains all of the habitat types within each habitat classification that appear in the 'Type' drop-down list on the 'Habitats' tab (for the selected 'Class') and the 'Habitat Type' drop-down list on the 'Sources' tab. Selecting a type on the 'Habitats' tab filters the 'Primary' drop-down list to show only relevant primary habitat codes. See :ref:`configuring_habitat_type` for more details.
 
 .. list-table:: lut_habitat_type fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 50
+    :widths: 16 50
 
     * - column
       - description
@@ -1105,14 +1122,15 @@ This table contains all of the habitat types within each habitat classification 
 
 .. _lut_habitat_type_primary:
 
-### lut_habitat_type_primary
+lut_habitat_type_primary
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 This cross-reference table maps habitat types to their valid and preferred primary habitat codes, and their suggested secondary codes and habitat tips. It controls which primary codes appear in the 'Primary' drop-down list for a given habitat type, and whether a code is shown as 'preferred' (bold, above the divider line) or not.
 
 .. list-table:: lut_habitat_type_primary fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 50
+    :widths: 16 50
 
     * - column
       - description
@@ -1146,14 +1164,15 @@ This cross-reference table maps habitat types to their valid and preferred prima
 
 .. _lut_habitat_type_secondary:
 
-### lut_habitat_type_secondary
+lut_habitat_type_secondary
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This cross-reference table maps habitat types to their permitted secondary habitat codes, and flags whether each secondary code is mandatory or just optional for that habitat type. It populates the read-only 'Mandatory' and 'Optional' fields on the 'Habitats' tab.
 
 .. list-table:: lut_habitat_type_secondary fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 15 50
+    :widths: 14 50
 
     * - column
       - description
@@ -1186,7 +1205,8 @@ This cross-reference table maps habitat types to their permitted secondary habit
 
 .. _lut_primary:
 
-### lut_primary
+lut_primary
+~~~~~~~~~~~
 
 This table contains all the primary habitat codes that can be assigned to an INCID. The codes that appear in the 'Primary' drop-down list on the 'Habitats' tab are determined by the selected habitat class and type via the ``lut_habitat_type_primary`` cross-reference table.
 
@@ -1237,7 +1257,8 @@ This table contains all the primary habitat codes that can be assigned to an INC
 
 .. _lut_primary_category:
 
-**lut_primary_category**
+lut_primary_category
+~~~~~~~~~~~~~~~~~~~~
 
 This table groups primary habitat codes into categories. The ``is_local`` flag on this table acts as a high-level filter - only primary codes whose category is marked as local will appear in drop-down lists, regardless of the ``is_local`` flag on ``lut_primary`` itself.
 
@@ -1274,7 +1295,8 @@ This table groups primary habitat codes into categories. The ``is_local`` flag o
 
 .. _lut_primary_secondary:
 
-**lut_primary_secondary**
+lut_primary_secondary
+~~~~~~~~~~~~~~~~~~~~~
 
 This cross-reference table maps primary habitat codes to their valid secondary habitat codes. When the **Primary/Secondary Validation** option is active, only secondary codes present in this table for the selected primary habitat will appear in the 'Code' drop-down list on the 'Habitats' tab.
 
@@ -1314,7 +1336,8 @@ This cross-reference table maps primary habitat codes to their valid secondary h
 
 .. _lut_secondary:
 
-**lut_secondary**
+lut_secondary
+~~~~~~~~~~~~~
 
 This table contains all the secondary habitat codes that can be assigned to an INCID alongside a primary habitat code. The codes that appear in the 'Code' drop-down list on the 'Habitats' tab are filtered by the selected secondary group and, when validation is active, by the selected primary habitat via the ``lut_primary_secondary`` cross-reference table.
 
@@ -1353,7 +1376,8 @@ This table contains all the secondary habitat codes that can be assigned to an I
 
 .. _lut_secondary_group:
 
-**lut_secondary_group**
+lut_secondary_group
+~~~~~~~~~~~~~~~~~~~
 
 This table groups secondary habitat codes into named categories, which appear in the 'Group' drop-down list on the 'Habitats' tab to help users narrow down secondary code choices.
 
@@ -1415,7 +1439,8 @@ The following lookup tables can be updated to tailor local requirements:
 
 .. _lut_legacy_habitat:
 
-**lut_legacy_habitat**
+lut_legacy_habitat
+~~~~~~~~~~~~~~~~~~
 
 This table contains all of the legacy habitats that can be referenced by an INCID. The codes appear in the 'Legacy Habitat' drop-down list on the 'Habitats' tab.
 
@@ -1453,14 +1478,15 @@ This table contains all of the legacy habitats that can be referenced by an INCI
 
 .. _lut_osmm_habitat_xref:
 
-**lut_osmm_habitat_xref**
+lut_osmm_habitat_xref
+~~~~~~~~~~~~~~~~~~~~~
 
 This table contains a cross-reference between OS MasterMap feature types and the primary and secondary habitat codes. It is used when reviewing and bulk applying proposed OSMM Updates, and when bulk loading OSMM features.
 
 .. list-table:: lut_osmm_habitat_xref fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 12 50
+    :widths: 13 50
 
     * - column
       - description
@@ -1506,7 +1532,8 @@ This table contains a cross-reference between OS MasterMap feature types and the
 
 .. _lut_process:
 
-**lut_process**
+lut_process
+~~~~~~~~~~~
 
 This table contains details of all the processes that can be referenced as the activity being undertaken when applying updates with the HLU Tool.
 
@@ -1541,14 +1568,15 @@ This table contains details of all the processes that can be referenced as the a
 
 .. _lut_sources:
 
-**lut_sources**
+lut_sources
+~~~~~~~~~~~
 
 This table contains details of all the source datasets that can be referenced as a 'Source' by an INCID. New sources can be added to this table to allow them to be selected in the 'Sources' tab of the dockpane. See :ref:`configuring_sources` for more details.
 
 .. list-table:: lut_sources fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 12 50
+    :widths: 13 50
 
     * - column
       - description
@@ -1581,14 +1609,15 @@ This table contains details of all the source datasets that can be referenced as
 
 .. _lut_users:
 
-**lut_users**
+lut_users
+~~~~~~~~~
 
 This table contains details of all the users that have editing capability with the HLU Tool and indicates if they are also able to perform 'bulk' updates.
 
 .. list-table:: lut_users fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 10 50
+    :widths: 9 50
 
     * - column
       - description
@@ -1682,7 +1711,7 @@ This table defines which fields are to be exported for each export format in the
 .. list-table:: exports_fields fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 15 50
+    :widths: 12 50
 
     * - column
       - description
