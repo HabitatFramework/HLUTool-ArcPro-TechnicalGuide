@@ -137,7 +137,7 @@ This is the main data table with one record per INCID. All the other data tables
 .. list-table:: incid fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 24 10 50
+    :widths: 22 10 50
 
     * - column
       - data type
@@ -216,7 +216,7 @@ This table contains any IHS Matrix codes recorded alongside an IHS Habitat code 
 .. list-table:: incid_ihs_matrix fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 15 10 50
+    :widths: 12 10 50
 
     * - column
       - data type
@@ -247,7 +247,7 @@ This table contains any IHS Formation codes recorded alongside an IHS Habitat co
 .. list-table:: incid_ihs_formation fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 15 10 50
+    :widths: 12 10 50
 
     * - column
       - data type
@@ -278,7 +278,7 @@ This table contains any IHS Management codes recorded alongside an IHS Habitat c
 .. list-table:: incid_ihs_management fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 15 10 50
+    :widths: 14 10 50
 
     * - column
       - data type
@@ -309,7 +309,7 @@ This table contains any IHS Complex codes recorded alongside an IHS Habitat code
 .. list-table:: incid_ihs_complex fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 15 10 50
+    :widths: 12 10 50
 
     * - column
       - data type
@@ -378,7 +378,7 @@ This table contains details of the condition assessments for an INCID. There can
 .. list-table:: incid_condition fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 10 50
+    :widths: 19 10 50
 
     * - column
       - data type
@@ -418,7 +418,7 @@ This table contains any secondary habitat codes recorded alongside the primary h
 .. list-table:: incid_secondary fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 20 10 50
+    :widths: 18 10 50
 
     * - column
       - data type
@@ -449,7 +449,7 @@ This table contains details of the source datasets for an INCID. There can be be
 .. list-table:: incid_sources fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 24 10 50
+    :widths: 25 10 50
 
     * - column
       - data type
@@ -488,47 +488,65 @@ This table contains details of the source datasets for an INCID. There can be be
       - Integer
       - Determines the (ascending) order the sources for each INCID will be displayed in the 'Sources' tab of the dockpane.
 
-.. tabularcolumns:: |L|L|L|
+.. list-table:: Vague date types
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 10 40 30
 
-.. table:: Vague date types
-
-	+-----------+-------------------------------+---------------------------+
-	| Date Type |          Description          |          Example          |
-	+===========+===============================+===========================+
-	| D         | Single day date               | 15/10/2010                |
-	+-----------+-------------------------------+---------------------------+
-	| DD        | Day-to-date date range        | 15/10/2010 - 18/10/2010   |
-	+-----------+-------------------------------+---------------------------+
-	| D-        | Day start with no end date    | 15/10/2010 -              |
-	+-----------+-------------------------------+---------------------------+
-	| -D        | Day end with no start date    | \- 18/10/2010             |
-	+-----------+-------------------------------+---------------------------+
-	| O         | Single month date             | Oct 2010                  |
-	+-----------+-------------------------------+---------------------------+
-	| OO        | Month-to-month date range     | Oct 2010 - Nov 2010       |
-	+-----------+-------------------------------+---------------------------+
-	| O-        | Month start with no end date  | Oct 2010 -                |
-	+-----------+-------------------------------+---------------------------+
-	| -O        | Month end with no start date  | \- Nov 2010               |
-	+-----------+-------------------------------+---------------------------+
-	| Y         | Single year date              | 2010                      |
-	+-----------+-------------------------------+---------------------------+
-	| YY        | Year-to-year date range       | 2010 - 2011               |
-	+-----------+-------------------------------+---------------------------+
-	| Y-        | Year start with no end date   | 2010 -                    |
-	+-----------+-------------------------------+---------------------------+
-	| -Y        | Year end with no start date   | \- 2011                   |
-	+-----------+-------------------------------+---------------------------+
-	| P         | Single season date            | Autumn 2010               |
-	+-----------+-------------------------------+---------------------------+
-	| PP        | Season-to-season date range   | Autumn 2010 - Winter 2010 |
-	+-----------+-------------------------------+---------------------------+
-	| P-        | Season start with no end date | Autumn 2010 -             |
-	+-----------+-------------------------------+---------------------------+
-	| -P        | Season end with no start date | \- Winter 2010            |
-	+-----------+-------------------------------+---------------------------+
-	| U         | Unknown date                  | Unknown                   |
-	+-----------+-------------------------------+---------------------------+
+    * - Date Type
+      - Description
+      - Example
+    * - D
+      - Single day date
+      - 15/10/2010
+    * - DD
+      - Day-to-date date range
+      - 15/10/2010 - 18/10/2010
+    * - D-
+      - Day start with no end date
+      - 15/10/2010 -
+    * - -D
+      - Day end with no start date
+      - - 18/10/2010
+    * - O
+      - Single month date
+      - Oct 2010
+    * - OO
+      - Month-to-month date range
+      - Oct 2010 - Nov 2010
+    * - O-
+      - Month start with no end date
+      - Oct 2010 -
+    * - -O
+      - Month end with no start date
+      - - Nov 2010
+    * - Y
+      - Single year date
+      - 2010
+    * - YY
+      - Year-to-year date range
+      - 2010 - 2011
+    * - Y-
+      - Year start with no end date
+      - 2010 -
+    * - -Y
+      - Year end with no start date
+      - - 2011
+    * - P
+      - Single season date
+      - Autumn 2010
+    * - PP
+      - Season-to-season date range
+      - Autumn 2010 - Winter 2010
+    * - P-
+      - Season start with no end date
+      - Autumn 2010 -
+    * - -P
+      - Season end with no start date
+      - - Winter 2010
+    * - U
+      - Unknown date
+      - Unknown
 
 .. index::
 	single: Data Tables; incid_osmm_update
@@ -595,7 +613,7 @@ This table contains a record of **every** change to **every** feature made using
 .. list-table:: history fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 22 10 50
+    :widths: 21 10 50
 
     * - column
       - data type
@@ -645,7 +663,7 @@ This table contains a record of **every** change to **every** feature made using
     * - modified_area
       - Float
       - A decimal value of variable precision representing the spatial area of the feature after the changes to the feature.
-    * - modified_determinqty
+    * - modified_determqty
       - Char(2)
       - Foreign key to ``code`` in the ``lut_quality_determination`` table representing the accuracy with which the primary and secondary habitats of the INCID for this feature have been determined prior to the changes to the feature.
     * - modified_interpqty
@@ -665,7 +683,7 @@ This table is a local database **copy** of the attribute table for the HLU polyg
 .. list-table:: incid_mm_polygons fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 15 10 50
+    :widths: 12 10 50
 
     * - column
       - data type
@@ -711,7 +729,7 @@ This table is a local database **copy** of the attribute table for the HLU polyl
 .. list-table:: incid_mm_lines fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 15 10 50
+    :widths: 12 10 50
 
     * - column
       - data type
@@ -757,7 +775,7 @@ This table is a local database **copy** of the attribute table for the HLU point
 .. list-table:: incid_mm_points fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 15 10 50
+    :widths: 12 10 50
 
     * - column
       - data type
@@ -1086,7 +1104,7 @@ This table contains all of the habitat types within each habitat classification 
 .. list-table:: lut_habitat_type fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 16 50
+    :widths: 14 50
 
     * - column
       - description
@@ -1130,7 +1148,7 @@ This cross-reference table maps habitat types to their valid and preferred prima
 .. list-table:: lut_habitat_type_primary fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 16 50
+    :widths: 15 50
 
     * - column
       - description
@@ -1172,7 +1190,7 @@ This cross-reference table maps habitat types to their permitted secondary habit
 .. list-table:: lut_habitat_type_secondary fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 14 50
+    :widths: 13 50
 
     * - column
       - description
@@ -1213,7 +1231,7 @@ This table contains all the primary habitat codes that can be assigned to an INC
 .. list-table:: lut_primary fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 15 50
+    :widths: 14 50
 
     * - column
       - description
@@ -1486,7 +1504,7 @@ This table contains a cross-reference between OS MasterMap feature types and the
 .. list-table:: lut_osmm_habitat_xref fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 13 50
+    :widths: 14 50
 
     * - column
       - description
@@ -1576,7 +1594,7 @@ This table contains details of all the source datasets that can be referenced as
 .. list-table:: lut_sources fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 13 50
+    :widths: 14 50
 
     * - column
       - description
@@ -1686,7 +1704,7 @@ This table defines all of the export 'formats' that can be used when exporting d
 .. list-table:: exports fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 10 50
+    :widths: 9 50
 
     * - column
       - description
@@ -1711,7 +1729,7 @@ This table defines which fields are to be exported for each export format in the
 .. list-table:: exports_fields fields
     :header-rows: 1
     :stub-columns: 1
-    :widths: 12 50
+    :widths: 11 50
 
     * - column
       - description
@@ -1754,28 +1772,35 @@ export_field_types
 
 This table lists the field types that can be defined in the ``export_fields`` table.
 
-.. tabularcolumns:: |C|L|L|
+.. list-table:: Valid Export Field Types
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 10 15 40
 
-.. table:: Valid Export Field Types
-
-	+------------+-------------------+------------------------------------------------------------+
-	| Field Type | Field Description |                          Comment                           |
-	+============+===================+============================================================+
-	|          3 | Integer           | Standard number with no decimal places.                    |
-	+------------+-------------------+------------------------------------------------------------+
-	|          6 | Single            | Short number with decimal places.                          |
-	+------------+-------------------+------------------------------------------------------------+
-	|          7 | Double            | Long number with decimal places.                           |
-	+------------+-------------------+------------------------------------------------------------+
-	|          8 | Date/Time         | Date and Time stamp.                                       |
-	+------------+-------------------+------------------------------------------------------------+
-	|         10 | Text              | Text field up to 254 characters long.                      |
-	+------------+-------------------+------------------------------------------------------------+
-	|         99 | AutoNumber        | Integer field that automatically increments with each row. |
-	+------------+-------------------+------------------------------------------------------------+
+    * - Field Type
+      - Field Description
+      - Comment
+    * - 3
+      - Integer
+      - Standard number with no decimal places.
+    * - 6
+      - Single
+      - Short number with decimal places.
+    * - 7
+      - Double
+      - Long number with decimal places.
+    * - 8
+      - Date/Time
+      - Date and Time stamp.
+    * - 10
+      - Text
+      - Text field up to 254 characters long.
+    * - 99
+      - AutoNumber
+      - Integer field that automatically increments with each row.
 
 .. note::
-	field_length is only used where the field_type is '10' (text), otherwise it is ignored.
+	The 'field_length' value in the ``export_fields`` table is only used where the field_type is '10' (text), otherwise it is ignored.
 
 .. raw:: latex
 

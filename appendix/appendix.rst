@@ -11,51 +11,56 @@ Appendix
 Change Log
 ==========
 
+**1.2.1**
+(27th August 2026)
+
+    * No technical guide content changes. Version updated to remain in sync with HLU Tool and User Guide release 1.2.1.
+
 **1.2.0**
 (30th July 2026)
 
-    * :guilabel:`New` Added documentation for **Bulk Load Options** configuration section describing default staging layer settings
-    * :guilabel:`New` Added documentation for **Reassign Options** configuration section with SQL WHERE clause examples
-    * :guilabel:`Updated` Database schema documentation to include ``incid_mm_lines`` and ``incid_mm_points`` tables
-    * :guilabel:`Updated` Table key to reflect line and point geometry support
-    * :guilabel:`Updated` ``incid`` table documentation to include ``ihs_summary`` field
+    * **New:** Added documentation for **Bulk Load Options** configuration section describing default staging layer settings
+    * **New:** Added documentation for **Reassign Options** configuration section with SQL WHERE clause examples
+    * **Updated:** Database schema documentation to include ``incid_mm_lines`` and ``incid_mm_points`` tables
+    * **Updated:** Table key to reflect line and point geometry support
+    * **Updated:** ``incid`` table documentation to include ``ihs_summary`` field
 
 **1.1.1**
 (9th July 2026)
 
-    * :guilabel:`Updated` Database schema documentation to reflect ``ihs_summary`` field addition
-    * :guilabel:`Updated` Performance optimization guidance for IHS summary queries
+    * **Updated:** Database schema documentation to reflect ``ihs_summary`` field addition
+    * **Updated:** Performance optimization guidance for IHS summary queries
 
 **1.1.0**
 (16th May 2026)
 
-    * :guilabel:`New` Added documentation for bulk load and unload operations
-    * :guilabel:`New` Added documentation for OSMM cross-reference table support
-    * :guilabel:`New` Added notes about staging layer creation and management
-    * :guilabel:`Updated` Configuration section to include bulk load settings
+    * **New:** Added documentation for bulk load and unload operations
+    * **New:** Added documentation for OSMM cross-reference table support
+    * **New:** Added notes about staging layer creation and management
+    * **Updated:** Configuration section to include bulk load settings
 
 **1.0.1**
 (27th April 2026)
 
-    * :guilabel:`Updated` System requirements to specify ArcGIS Pro 3.4 or later
-    * :guilabel:`Updated` Installation instructions for ``.esriAddinX`` file format
-    * :guilabel:`Updated` Database updater section to reflect .NET 8 runtime requirement
-    * :guilabel:`Improved` Cross-references and links throughout the guide
+    * **Updated:** System requirements to specify ArcGIS Pro 3.4 or later
+    * **Updated:** Installation instructions for ``.esriAddinX`` file format
+    * **Updated:** Database updater section to reflect .NET 8 runtime requirement
+    * **Improved:** Cross-references and links throughout the guide
 
 **1.0.0**
 (16th April 2026)
 
 First release of the HLU Tool Technical Guide for the ArcGIS Pro edition.
 
-    * :guilabel:`New` Complete rewrite for ArcGIS Pro add-in architecture
-    * :guilabel:`New` Updated system requirements section for ArcGIS Pro 3.4+ and .NET 8
-    * :guilabel:`New` Clarified that Microsoft Access is not supported as a backend database
-    * :guilabel:`New` Added notes about using Access as an administrative front-end to SQL Server
-    * :guilabel:`New` Updated database schema documentation for polygon geometry support
-    * :guilabel:`Updated` Installation and uninstallation procedures for ArcGIS Pro add-ins
-    * :guilabel:`Updated` Configuration sections for application and user-level settings
-    * :guilabel:`Updated` Optimization guidance for ArcGIS Pro performance
-    * :guilabel:`Updated` Database updater utility instructions for new architecture
+    * **New:** Complete rewrite for ArcGIS Pro add-in architecture
+    * **New:** Updated system requirements section for ArcGIS Pro 3.4+ and .NET 8
+    * **New:** Clarified that Microsoft Access is not supported as a backend database
+    * **New:** Added notes about using Access as an administrative front-end to SQL Server
+    * **New:** Updated database schema documentation for polygon geometry support
+    * **Updated:** Installation and uninstallation procedures for ArcGIS Pro add-ins
+    * **Updated:** Configuration sections for application and user-level settings
+    * **Updated:** Optimization guidance for ArcGIS Pro performance
+    * **Updated:** Database updater utility instructions for new architecture
 
 .. raw:: latex
 
