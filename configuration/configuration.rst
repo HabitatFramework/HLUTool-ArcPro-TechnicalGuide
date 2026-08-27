@@ -507,7 +507,7 @@ The 'exports_fields' table defines which fields are to be exported as part of ea
 .. index::
 	single: Exports; Field Formats
 
-.. _export_field_formats:
+.. _configuring_export_field_formats:
 
 Field Formats
 -------------
