@@ -214,18 +214,18 @@ The 'lut_legacy_habitat' table contains all of the legacy habitats that can be r
 .. index::
 	single: Configuration; OSMM to IHS cross-reference
 
-.. _configuring_osmm_ihx_xref:
+.. _configuring_osmm_habitat_xref:
 
-Configuring OSMM to IHS cross-reference
----------------------------------------
+Configuring OSMM to habitat cross-reference
+-------------------------------------------
 
-The 'lut_osmm_ihs_xref' table contains a cross-reference between OS MasterMap feature types and the primary and secondary habitat codes. Each row represents a unique combination of OSMM attributes plus the corrsponding primary and secondary habitat codes. It is used when reviewing and bulk applying proposed OSMM Updates and when bulk loading OSMM features. New entries can be added to this table to allow them to be referenced by upcoming OSMM updates or input source layers containing new OSMM features to be bulk loaded.
+The 'lut_osmm_habitat_xref' table contains a cross-reference between OS MasterMap feature types and the primary and secondary habitat codes. Each row represents a unique combination of OSMM attributes plus the corrsponding primary and secondary habitat codes. It is used when reviewing and bulk applying proposed OSMM Updates and when bulk loading OSMM features. New entries can be added to this table to allow them to be referenced by upcoming OSMM updates or input source layers containing new OSMM features to be bulk loaded.
 
 .. note::
-	Existing OS MasterMap to IHS cross-reference records cannot be removed from the 'lut_osmm_ihs_xref' table if they are referenced by one or more records in the **incid_osmm_updates** table. This is because data integrity must be retained.
+	Existing OS MasterMap to IHS cross-reference records cannot be removed from the 'lut_osmm_habitat_xref' table if they are referenced by one or more records in the **incid_osmm_updates** table. This is because data integrity must be retained.
 
 .. seealso::
-	See :ref:`lut_osmm_ihs_xref` for more information on the lut_osmm_ihs_xref table.
+	See :ref:`lut_osmm_habitat_xref` for more information on the lut_osmm_habitat_xref table.
 
 .. index::
 	single: Configuration; Habitat Class
@@ -520,7 +520,7 @@ The format of some export fields can be modified in the output file depending on
 	.. tabularcolumns:: |L|L|L|
 
 	.. table:: Valid Export Field Formats for fields with related lookup tables
-	:widths: 20, 50, 25
+		:widths: 20, 50, 25
 
 		+-----------------+--------------------------------------------------------------------------------+-------------------------+
 		|   Field Format  |                                  Description                                   |         Example         |
@@ -543,7 +543,7 @@ The format of some export fields can be modified in the output file depending on
 	.. tabularcolumns:: |L|L|L|
 
 	.. table:: Valid Export Field Formats for source date fields
-	:widths: 20, 40, 35
+		:widths: 20, 40, 35
 
 		+--------------+---------------------------------------------------------+---------------------------------+
 		| Field Format |                    Output Description                   |             Example             |

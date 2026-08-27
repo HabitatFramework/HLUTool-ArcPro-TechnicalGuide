@@ -44,7 +44,7 @@ User interface field mapping
 
 How the data tables relate to the fields in the user interface is demonstrated in the following figures:
 
-.. _figUICF:
+.. _figUICI:
 
 .. figure:: figures/UserInterfaceIncidDBFields.png
 	:align: center
@@ -53,7 +53,7 @@ How the data tables relate to the fields in the user interface is demonstrated i
 	User Interface INCID Fields
 
 
-.. _figUIIF:
+.. _figUIHTF:
 
 .. figure:: figures/UserInterfaceHabitatsTabDBFields.png
 	:align: center
@@ -62,7 +62,7 @@ How the data tables relate to the fields in the user interface is demonstrated i
 	User Interface Habitats Tab Fields
 
 
-.. _figUIIF:
+.. _figUIITF:
 
 .. figure:: figures/UserInterfaceIHSTabDBFields.png
 	:align: center
@@ -71,7 +71,7 @@ How the data tables relate to the fields in the user interface is demonstrated i
 	User Interface IHS Tab Fields
 
 
-.. _figUIDF:
+.. _figUIPTF:
 
 .. figure:: figures/UserInterfacePriorityTabDBFields.png
 	:align: center
@@ -80,7 +80,7 @@ How the data tables relate to the fields in the user interface is demonstrated i
 	User Interface Priority Tab Fields
 
 
-.. _figUIDF:
+.. _figUIDTF:
 
 .. figure:: figures/UserInterfaceDetailsTabDBFields.png
 	:align: center
@@ -89,7 +89,7 @@ How the data tables relate to the fields in the user interface is demonstrated i
 	User Interface Details Tab Fields
 
 
-.. _figUISF:
+.. _figUISTF:
 
 .. figure:: figures/UserInterfaceSourcesTabDBFields.png
 	:align: center
@@ -98,7 +98,7 @@ How the data tables relate to the fields in the user interface is demonstrated i
 	User Interface Sources Tab Fields
 
 
-.. _figUIOF:
+.. _figUIOUF:
 
 .. figure:: figures/UserInterfaceOSMMUpdatesDBFields.png
 	:align: center
@@ -107,7 +107,7 @@ How the data tables relate to the fields in the user interface is demonstrated i
 	User Interface OSMM Updates Fields
 
 
-.. _figUIHF:
+.. _figUIHTF:
 
 .. figure:: figures/UserInterfaceHistoryTabDBFields.png
 	:align: center
@@ -547,7 +547,7 @@ This table contains details of any proposed Ordnance Survey MasterMap (OSMM) upd
       - Foreign key to ``incid`` in the ``incid`` table.
     * - osmm_xref_id
       - Integer
-      - Foreign key to ``osmm_xref_id`` in the ``lut_osmm_ihs_xref`` table representing a unique set of OS MasterMap attributes.
+      - Foreign key to ``osmm_xref_id`` in the ``lut_osmm_habitat_xref`` table representing a unique set of OS MasterMap attributes.
     * - spatial_flag
       - Char(1)
       - Indicates whether part of the new feature has been changed compared to the original framework.
@@ -901,7 +901,7 @@ lut_quality_interpretation
 	Contains the interpretation quality types that can be assigned to INCIDs on the 'Details tab of the dockpane, and to individual 'Priority Habitats' and 'Potential Priority Habitats' on the 'Priority' tab of the dockpane.
 
 lut_reason
-	Contains details of all the reasons that can be referenced in the 'Reason' field on the HLU Tool ribbon to indicate the activity being undertaken when using the HLU Tool. See :ref:`lut_reason` for more details.
+	Contains details of all the reasons that can be referenced in the 'Reason' field on the HLU Tool ribbon to indicate the activity being undertaken when using the HLU Tool.
 
 lut_secondary_bap_habitat
 	Contains the mapping between secondary habitats and priority habitats. It controls which priority habitats are automatically assigned to INCIDs on the 'Priority' tab of the dockpane based on the selected 'Secondary' habitats on the 'Habitats' tab.
@@ -1179,7 +1179,7 @@ This cross-reference table maps habitat types to their permitted secondary habit
       - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
 
 	.. note::
-		Whether missing mandatory secondary codes are treated as warnings or errors is controlled by the **Habitat/Secondary Validation** option. See :ref:`options_validation` in the HLU Tool User Guide for details.
+		Whether missing mandatory secondary codes are treated as warnings or errors is controlled by the **Habitat/Secondary Validation** option. See 'Validation Options' in the HLU Tool User Guide for details.
 
 .. index::
 	single: Lookup Tables; lut_primary
@@ -1307,7 +1307,7 @@ This cross-reference table maps primary habitat codes to their valid secondary h
       - Not used. This attribute is reserved for future use to indicate the organisation that is responsible for maintaining this record in the database.
 
 	.. note::
-		Whether this table is used to restrict secondary code choices is controlled by the **Primary/Secondary Validation** option. See :ref:`options_validation` in the HLU Tool User Guide for details.
+		Whether this table is used to restrict secondary code choices is controlled by the **Primary/Secondary Validation** option. See 'Validation Options' in the HLU Tool User Guide for details.
 
 .. index::
 	single: Lookup Tables; lut_secondary
@@ -1455,7 +1455,7 @@ This table contains all of the legacy habitats that can be referenced by an INCI
 
 **lut_osmm_habitat_xref**
 
-This table contains a cross-reference between OS MasterMap feature types and the primary and secondary habitat codes. It is used when reviewing and bulk applying proposed OSMM Updates and when bulk loading OSMM features.
+This table contains a cross-reference between OS MasterMap feature types and the primary and secondary habitat codes. It is used when reviewing and bulk applying proposed OSMM Updates, and when bulk loading OSMM features.
 
 .. list-table:: lut_osmm_habitat_xref fields
     :header-rows: 1
