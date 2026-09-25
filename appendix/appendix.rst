@@ -13,10 +13,12 @@ Change Log
 
 **1.2.1**
 (27th August 2026)
+
 No technical guide content changes. Version updated to remain in sync with HLU Tool and User Guide release 1.2.1.
 
 **1.2.0**
 (14th July 2026)
+
 Added new content for bulk load, unload and reassign operations.
 
     * **New:** Added documentation for bulk load and unload operations
@@ -28,6 +30,7 @@ Added new content for bulk load, unload and reassign operations.
 
 **1.1.1**
 (9th July 2026)
+
 Updated content around ihs_summary field and query guidance.
 
     * **Updated:** Database schema documentation to reflect ``ihs_summary`` field addition
@@ -35,6 +38,7 @@ Updated content around ihs_summary field and query guidance.
 
 **1.1.0**
 (30th June 2026)
+
 Added new content for line and point geometry type support.
 
     * **New:** Added documentation for polyline and point GIS layer support
@@ -44,6 +48,7 @@ Added new content for line and point geometry type support.
 
 **1.0.1**
 (27th April 2026)
+
 Updated content to reflect system requirements, installation instructions, and cross-references.
 
     * **Updated:** System requirements to specify ArcGIS Pro 3.4 or later
@@ -53,6 +58,7 @@ Updated content to reflect system requirements, installation instructions, and c
 
 **1.0.0**
 (16th April 2026)
+
 First release of the HLU Tool Technical Guide for the ArcGIS Pro edition.
 
     * **New:** Complete rewrite for ArcGIS Pro add-in architecture
